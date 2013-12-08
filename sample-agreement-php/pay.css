@@ -1,0 +1,289 @@
+/* Browser Amnesia
+-------------------------------------------------------------- */
+html, body, div, span, object, iframe, h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, code, del, dfn, em, img, q, dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend, table, caption, tbody, tfoot, thead, tr, th, td {
+	margin: 0; padding: 0; border: 0; font-weight: inherit; font-style: inherit;
+	font-size: 100%; font-family: inherit; vertical-align: baseline; }
+
+body { line-height: 1.5; }
+
+/* Tables still need 'cellspacing="0"' in the markup. */
+table { border-collapse: separate; border-spacing: 0; }
+caption, th, td { text-align: left; font-weight: normal; }
+table, td, th { vertical-align: middle; }
+
+/* Remove possible quote marks (") from <q>, <blockquote>. */
+blockquote:before, blockquote:after, q:before, q:after { content: ""; }
+blockquote, q { quotes: "" ""; }
+
+/* Remove annoying border on linked images. */
+a img { border: none; }
+
+/* Begin CSS
+-------------------------------------------------------------- */
+
+html {
+		
+}
+body {
+	font-size: 75%;
+	color: #222; 
+	background: #fff;
+	font-family: 'Lucida Grande', Arial, sans-serif; 
+	width: 100%;
+	text-align: center;
+	margin: 0 auto;
+}
+
+/* Headings
+-------------------------------------------------------------- */
+
+h1,h2,h3,h4,h5,h6, label, input {
+	font-family: 'Lucida Grande', Verdana, Helvetica, sans-serif; font-weight: normal; color: #111; }
+
+h1 { font-size: 3em; line-height: 1; margin-bottom: 0.5em; }
+h2 { font-size: 2em; margin-bottom: 0.75em; }
+h3 { font-size: 1.5em; line-height: 1; margin-bottom: 1em; }
+h4 { font-size: 1.2em; line-height: 1.25; margin-bottom: 1.25em; height: 1.25em; }
+h5 { font-size: 1em; font-weight: bold; margin-bottom: 1.5em; }
+h6 { font-size: 1em; font-weight: bold; }
+
+h1 img, h2 img, h3 img, h4 img, h5 img, h6 img {
+	margin: 0;
+}
+h1 span, h2 span, h3 span, h4 span, h5 span, h6 span {
+	text-transform: uppercase;
+	display: block;
+	font-size: 45%;
+}
+h4 span, h5 span, h6 span {
+	font-size: 90%;
+}
+
+/* Text elements
+-------------------------------------------------------------- */
+
+p           { margin: 0 0 1.5em; }
+p img       { float: left; margin: 1.5em 1.5em 1.5em 0; padding: 0; }
+p img.right { float: right; margin: 1.5em 0 1.5em 1.5em; }
+
+a:focus, 
+a:hover     { color: #000; }
+a           { color: #009; text-decoration: underlined; }
+
+blockquote  { margin: 1.5em; color: #666; font-style: italic; }
+strong      { font-weight: bold; }
+em,dfn      { font-style: italic; }
+dfn         { font-weight: bold; }
+sup, sub    { line-height: 0; }
+
+abbr, 
+acronym     { border-bottom: 1px dotted #666; }
+address     { margin: 0 0 1.5em; font-style: italic; }
+del         { color:#666; }
+
+pre,code    { margin: 1.5em 0; white-space: pre; }
+pre,code,tt { font: 1em 'andale mono', 'lucida console', monospace; line-height: 1.5; } 
+
+
+/* Lists
+-------------------------------------------------------------- */
+
+li ul, 
+li ol       { margin:0 1.5em; }
+ul, ol      { margin: 0 1.5em 1.5em 1.5em; }
+
+ul          { list-style-type: disc; }
+ol          { list-style-type: decimal; }
+
+dl          { margin: 0 0 1.5em 0; }
+dl dt       { font-weight: bold; }
+dd          { margin-left: 1.5em;}
+
+
+/* Tables
+-------------------------------------------------------------- */
+
+table       { margin-bottom: 1.4em; width:100%; }
+th          { font-weight: bold; background: #C3D9FF; }
+th,td       { padding: 4px 10px 4px 5px; }
+tr.even td  { background: #E5ECF9; }
+tfoot       { font-style: italic; }
+caption     { background: #eee; }
+
+
+/* Misc Global Classes
+-------------------------------------------------------------- */
+
+.right 		{ float: right; } /* YKMOFL */
+.left 		{ float: left; }
+.clear 		{ clear: both; }
+.cleft 		{ clear: left; }
+.cright 	{ clear: right; }
+
+.small      { font-size: .8em; margin-bottom: 1.875em; line-height: 1.875em; }
+.large      { font-size: 1.2em; line-height: 2.5em; margin-bottom: 1.25em; }
+.hide       { display: none; }
+
+.quiet      { color: #666; }
+.loud       { color: #000; }
+.highlight  { background:#ff0; }
+.added      { background:#060; color: #fff; }
+.removed    { background:#900; color: #fff; }
+
+.first      { margin-left:0; padding-left:0; }
+.last       { margin-right:0; padding-right:0; }
+.top        { margin-top:0; padding-top:0; }
+.bottom     { margin-bottom:0; padding-bottom:0; }
+
+.sIFR-replaced h1 	{ color: #3A990D; }
+.sIFR-alternate 	{ position: relative; left: -9999px; display: none; }
+
+
+/* Form Styling
+-------------------------------------------------------------- */
+
+label       { font-weight: bold; }
+fieldset    { padding:1.4em; margin: 0 0 1.5em 0; border: 1px solid #ccc; }
+legend      { font-weight: bold; font-size:1.2em; }
+
+
+/* Form fields
+-------------------------------------------------------------- */
+
+input.text, input.title,
+textarea, select {
+	margin:0.5em 0;
+	border:1px solid #bbb;
+}
+
+input.text:focus, input.title:focus,
+textarea:focus, select:focus {
+	border:1px solid #666;
+}
+
+input.text, 
+input.title   { width: 300px; padding:5px; }
+input.title   { font-size:1.5em; }
+textarea      { width: 390px; height: 250px; padding:5px; }
+
+
+/* Success, notice and error boxes
+-------------------------------------------------------------- */
+
+.error,
+.notice, 
+.success    { padding: .8em; margin-bottom: 1em; border: 2px solid #ddd; }
+
+.error      { background: #FBE3E4; color: #8a1f11; border-color: #FBC2C4; }
+.notice     { background: #FFF6BF; color: #514721; border-color: #FFD324; }
+.success    { background: #E6EFC2; color: #264409; border-color: #C6D880; }
+.error a    { color: #8a1f11; }
+.notice a   { color: #514721; }
+.success a  { color: #264409; }
+
+/* Layout Elements
+-------------------------------------------------------------- */
+
+
+body p {
+	font-family: Verdana, Arial, "MS Trebuchet", sans-serif;
+}
+.heading
+{
+	height: 75px;
+	background-image: url('aasp.jpeg');
+	background-repeat: no-repeat;
+	background-position: top right;
+	
+/*	font-size: 42;*/
+	text-align: center;
+}
+
+.title
+{
+/*	font-size: 24;*/
+	/*text-align: center;*/
+}
+
+span
+{
+	display: inline-block;
+	text-align: right;
+}
+
+.instructions
+{
+	margin: 20px;
+}
+
+.customer
+{
+	display: inline-block;
+	margin: 20px;
+}
+
+.problem
+{
+	clear: both;
+	margin: 20px;
+	padding-top: 20px;
+}
+
+.problem-description
+{
+	float: left;
+}
+
+.separator
+{
+	margin: 70px;
+	float: left;
+}
+
+.problem-presets
+{
+	margin: 50px 0 0 0;
+	float: left;
+}
+
+.equipment
+{
+	margin: 20px;
+	padding-top: 70px;
+	clear: both;
+	float: left;
+}
+
+.accessories
+{
+	margin: 70px;
+	float: left;
+}
+
+.disclaimer
+{
+	clear: both;
+	margin: 20px;
+}
+
+label.itemlabel, label.itemlabel:visited {
+	background: #222 url(alert-overlay.png) repeat-x; 
+	display: inline-block; 
+	padding: 5px 10px 6px; 
+	color: #fff; 
+	text-decoration: none;
+	-moz-border-radius: 5px; 
+	-webkit-border-radius: 5px;
+	-moz-box-shadow: 0 1px 3px rgba(0,0,0,0.5);
+	-webkit-box-shadow: 0 1px 3px rgba(0,0,0,0.5);
+	text-shadow: 0 -1px 1px rgba(0,0,0,0.25);
+	border-bottom: 1px solid rgba(0,0,0,0.25);
+	position: relative;
+	cursor: pointer;
+}
+
+	label.itemlabel:hover							{ background-color: #111; color: #fff; }
+	label.itemlabel:active							{ top: 1px; }
+	label.itemlabel, label.itemlabel:visited 			{ font-size: 11px; padding: ; }
