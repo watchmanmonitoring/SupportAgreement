@@ -60,14 +60,14 @@ These work in our Perl form, will be added to the PHP version.
 
 Values:
 
-monitoring  
-monitoring-family  
-managed  
-servers  
-winservers  
-personal  
-premier  
-hours  
+* monitoring  
+* monitoring-family  
+* managed  
+* servers  
+* winservers  
+* personal  
+* premier  
+* hours  
 
 
 
