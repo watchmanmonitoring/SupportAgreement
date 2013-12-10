@@ -3,6 +3,8 @@ SupportAgreement
 
 Simple agreement form / idea starter. Fork &amp; branch to see what works for you
 
+A version of this agreement form is posted here:
+http://www.watchmanmonitoring.com/sample-agreement
 
 
 This agreement form is meant to be a launching board for your own offering.
