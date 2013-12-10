@@ -3,18 +3,17 @@ SupportAgreement
 
 Simple agreement form / idea starter. Fork &amp; branch to see what works for you
 
-A version of this agreement form is posted here:
-http://www.watchmanmonitoring.com/sample-agreement
+A version of this agreement form is posted here:  
+* http://www.watchmanmonitoring.com/sample-agreement
+
 
 
 This agreement form is meant to be a launching board for your own offering.
 
 
-[Branch](https://help.github.com/articles/fork-a-repo#create-branches) this to help add features.
-
-[Fork](https://help.github.com/articles/fork-a-repo) this to make your own copy.
-
-[Create pull requests](https://help.github.com/articles/using-pull-requests) to help improve it later on.
+* [Branch](https://help.github.com/articles/fork-a-repo#create-branches) this to help add features.  
+* [Fork](https://help.github.com/articles/fork-a-repo) this to make your own copy.  
+* [Create pull requests](https://help.github.com/articles/using-pull-requests) to help improve it later on.
 
 Wish this would do something it didn't? [Create an issue!](https://github.com/watchmanmonitoring/SupportAgreement/issues)
 
@@ -54,10 +53,30 @@ Your mileage will vary, but these will work for a common Virtual Private Servers
 * [Tell a friend.](http://www.watchmanmonitoring.com/refer)
 
 
-Prefilling the fields
+Prefilling the fields #TODO
 ===============
 
+These work in our Perl form, will be added to the PHP version.
 
+Values:
+
+monitoring
+monitoring-family
+managed
+servers
+winservers
+personal
+premier
+hours
+
+
+
+
+Examples:
+https://www.watchmanmonitoring.com/sample-agreement/?personal=2
+https://www.watchmanmonitoring.com/sample-agreement/?personal=2&monitoring=10
+https://www.watchmanmonitoring.com/sample-agreement/?personal=1&servers=2
+https://www.watchmanmonitoring.com/sample-agreement/?personal=2&monitoring=5&servers=1&hours=10
 
 
 
