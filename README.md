@@ -60,23 +60,23 @@ These work in our Perl form, will be added to the PHP version.
 
 Values:
 
-monitoring
-monitoring-family
-managed
-servers
-winservers
-personal
-premier
-hours
+monitoring  
+monitoring-family  
+managed  
+servers  
+winservers  
+personal  
+premier  
+hours  
 
 
 
 
-Examples:
-https://www.watchmanmonitoring.com/sample-agreement/?personal=2
-https://www.watchmanmonitoring.com/sample-agreement/?personal=2&monitoring=10
-https://www.watchmanmonitoring.com/sample-agreement/?personal=1&servers=2
-https://www.watchmanmonitoring.com/sample-agreement/?personal=2&monitoring=5&servers=1&hours=10
+Examples:  
+https://www.watchmanmonitoring.com/sample-agreement/?personal=2  
+https://www.watchmanmonitoring.com/sample-agreement/?personal=2&monitoring=10  
+https://www.watchmanmonitoring.com/sample-agreement/?personal=1&servers=2  
+https://www.watchmanmonitoring.com/sample-agreement/?personal=2&monitoring=5&servers=1&hours=10  
 
 
 
