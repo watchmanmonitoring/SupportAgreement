@@ -451,7 +451,7 @@ else {
 									<span id="price_item_1">&#36;10</span>
 								</td>
 								<td valign="top" align="center" style="text-align: right;">
-									<input type="text" name="qty_item_2" id="qty_item_2" value="<?php if (isset($_POST["qty_item_2"])){echo $_POST["qty_item_2"];}?>" size="2" style="text-align: right;"/>
+									<input type="text" name="qty_item_2" id="qty_item_2" value="<?php if (isset($_GET["monitoring"])){echo $_GET["monitoring"];} ?><?php if (isset($_POST["qty_item_2"])){echo $_POST["qty_item_2"];}?>" size="2" style="text-align: right;"/>
 								</td>
 								<td valign="top" style="text-align: right;" align="right" id="total_item_2">
 								</td>
@@ -465,7 +465,7 @@ else {
 											<span id="price_item_8">&#36;15</span>
 									</td>
 									<td valign="top" align="center" style="text-align: right;">
-										<input type="text" name="qty_item_8" id="qty_item_8" value="<?php if (isset($_POST["qty_item_8"])){echo $_POST["qty_item_8"];}?>" size="2" style="text-align: right;"/>
+										<input type="text" name="qty_item_8" id="qty_item_8" value="<?php if (isset($_GET["monitoring-family"])){echo $_GET["monitoring-family"];} ?><?php if (isset($_POST["qty_item_8"])){echo $_POST["qty_item_8"];}?>" size="2" style="text-align: right;"/>
 									</td>
 									<td valign="top" style="text-align: right;" align="right" id="total_item_8">
 								</td>
@@ -479,7 +479,7 @@ else {
 									<span id="price_item_4">&#36;35</span>
 								</td>
 								<td valign="top" align="center" style="text-align: right;">
-									<input type="text" name="qty_item_4" id="qty_item_4" value="<?php if (isset($_POST["qty_item_4"])){echo $_POST["qty_item_4"];}?>" size="2" style="text-align: right;"/>
+									<input type="text" name="qty_item_4" id="qty_item_4" value="<?php if (isset($_GET["managed"])){echo $_GET["managed"];} ?><?php if (isset($_POST["qty_item_4"])){echo $_POST["qty_item_4"];}?>" size="2" style="text-align: right;"/>
 								</td>
 								<td valign="top" style="text-align: right;" align="right" id="total_item_4">
 								</td>
@@ -493,7 +493,7 @@ else {
 									<span id="price_item_3">&#36;100</span>
 								</td>
 								<td valign="top" align="center" style="text-align: right;">
-									<input type="text" name="qty_item_3" id="qty_item_3" value="<?php if (isset($_POST["qty_item_3"])){echo $_POST["qty_item_3"];}?>" size="2" style="text-align: right;"/>
+									<input type="text" name="qty_item_3" id="qty_item_3" value="<?php if (isset($_GET["servers"])){echo $_GET["servers"];} ?><?php if (isset($_POST["qty_item_3"])){echo $_POST["qty_item_3"];}?>" size="2" style="text-align: right;"/>
 								</td>
 								<td valign="top" style="text-align: right;" align="right" id="total_item_3">
 
@@ -508,7 +508,7 @@ else {
 									<span id="price_item_5">&#36;150</span>
 								</td>
 								<td valign="top" align="center" style="text-align: right;">
-									<input type="text" name="qty_item_5" id="qty_item_5" value="<?php if (isset($_POST["qty_item_5"])){echo $_POST["qty_item_5"];}?>" size="2" style="text-align: right;"/>
+									<input type="text" name="qty_item_5" id="qty_item_5" value="<?php if (isset($_GET["winservers"])){echo $_GET["winservers"];} ?><?php if (isset($_POST["qty_item_5"])){echo $_POST["qty_item_5"];}?>" size="2" style="text-align: right;"/>
 								</td>
 								<td valign="top" style="text-align: right;" align="right" id="total_item_5">
 
@@ -531,7 +531,7 @@ else {
 									<span id="price_item_2">&#36;25</span>
 								</td>
 								<td valign="top" align="center" style="text-align: right;">
-									<input type="text" name="qty_item_1" id="qty_item_1" value="<?php if (isset($_POST["qty_item_1"])){echo $_POST["qty_item_1"];}?>" size="2" style="text-align: right;"/>
+									<input type="text" name="qty_item_1" id="qty_item_1" value="<?php if (isset($_GET["personal"])){echo $_GET["personal"];} ?><?php if (isset($_POST["qty_item_1"])){echo $_POST["qty_item_1"];}?>" size="2" style="text-align: right;"/>
 								</td>
 								<td valign="top" style="text-align: right;" align="right" id="total_item_1">
 								</td>
@@ -546,7 +546,7 @@ else {
 									<span id="price_item_7">&#36;70</span>
 								</td>
 								<td valign="top" align="center" style="text-align: right;">
-									<input type="text" name="qty_item_7" id="qty_item_7" value="<?php if (isset($_POST["qty_item_7"])){echo $_POST["qty_item_7"];}?>" size="2" style="text-align: right;"/>
+									<input type="text" name="qty_item_7" id="qty_item_7" value="<?php if (isset($_GET["premier"])){echo $_GET["premier"];} ?><?php if (isset($_POST["qty_item_7"])){echo $_POST["qty_item_7"];}?>" size="2" style="text-align: right;"/>
 								</td>
 								<td valign="top" style="text-align: right;" align="right" id="total_item_7">
 								</td>
@@ -561,7 +561,7 @@ else {
 									<span id="price_item_6">&#36;100</span>
 								</td>
 								<td valign="top" align="center" style="text-align: right;">
-									<input type="text" name="qty_item_6" id="qty_item_6" value="<?php if (isset($_POST["qty_item_6"])){echo $_POST["qty_item_6"];}?>" size="2" style="text-align: right;"/>
+									<input type="text" name="qty_item_6" id="qty_item_6" value="<?php if (isset($_GET["hours"])){echo $_GET["hours"];} ?><?php if (isset($_POST["qty_item_6"])){echo $_POST["qty_item_6"];}?>" size="2" style="text-align: right;"/>
 								</td>
 								<td valign="top" style="text-align: right;" align="right" id="total_item_6">
 								</td>
