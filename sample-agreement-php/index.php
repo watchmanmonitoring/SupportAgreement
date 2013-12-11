@@ -381,43 +381,43 @@ else {
 
 						<div class="span-8">
 							<label class="span-2" for="company">Company (if applicable)</label><br>
-							<input type="text" name="company" value="<?php if (isset($_POST["company"])){echo $_POST["company"];}?>" id="company" style="width: 300px;" class="text"><br>
+							<input type="text" name="company" value="<?php if (isset($_GET["company"])){echo $_GET["company"];} ?><?php if (isset($_POST["company"])){echo $_POST["company"];}?>" id="company" style="width: 300px;" class="text"><br>
 						</div>
 						<div class="span-4">
 							<label class="span-2" for="firstname">First Name <span style="color:red;">*</span></label><br>
-							<input type="text" name="firstname" value="<?php if (isset($_POST["firstname"])){echo $_POST["firstname"];}?>" id="firstname" class="text"><br>
+							<input type="text" name="firstname" value="<?php if (isset($_GET["firstname"])){echo $_GET["firstname"];} ?><?php if (isset($_POST["firstname"])){echo $_POST["firstname"];}?>" id="firstname" class="text"><br>
 						</div>
 						<div class="span-4">
 							<label class="span-2" for="lastname">Last Name <span style="color:red;">*</span></label><br>
-							<input type="text" name="lastname" value="<?php if (isset($_POST["lastname"])){echo $_POST["lastname"];}?>" id="lastname" class="text"><br>
+							<input type="text" name="lastname" value="<?php if (isset($_GET["lastname"])){echo $_GET["lastname"];} ?><?php if (isset($_POST["lastname"])){echo $_POST["lastname"];}?>" id="lastname" class="text"><br>
 						</div>
 						<div class="span-8">
 							<label class="form-label" for="email">Billing Email Address <span style="color:red;">*</span></label><br>
-							<input type="text" name="email" value="<?php if (isset($_POST["email"])){echo $_POST["email"];}?>" id="email" style="width: 300px!important;" class="text"><br>
+							<input type="text" name="email" value="<?php if (isset($_GET["email"])){echo $_GET["email"];} ?><?php if (isset($_POST["email"])){echo $_POST["email"];}?>" id="email" style="width: 300px!important;" class="text"><br>
 						</div>
 						<div class="span-8">
 							<label class="span-2" for="address1">Address</label><br>
-							<input type="text" name="address1" value="<?php if (isset($_POST["address1"])){echo $_POST["address1"];}?>" id="address1" style="width: 300px!important;" class="text"><br>
+							<input type="text" name="address1" value="<?php if (isset($_GET["address"])){echo $_GET["address"];} ?><?php if (isset($_POST["address1"])){echo $_POST["address1"];}?>" id="address1" style="width: 300px!important;" class="text"><br>
 						</div>
 						<div class="span-4">
 							<label class="form-label" for="city">City</label><br>
-							<input type="text" name="city" value="<?php if (isset($_POST["city"])){echo $_POST["city"];}?>" id="city" class="text"><br>
+							<input type="text" name="city" value="<?php if (isset($_GET["city"])){echo $_GET["city"];} ?><?php if (isset($_POST["city"])){echo $_POST["city"];}?>" id="city" class="text"><br>
 						</div>
 						<div class="span-2">
 							<label class="form-label" for="state">State</label><br>
-							<input type="text" name="state" value="<?php if (isset($_POST["state"])){echo $_POST["state"];}?>" id="state" style="width: 25px!important;" class="text"><br>
+							<input type="text" name="state" value="<?php if (isset($_GET["state"])){echo $_GET["state"];} ?><?php if (isset($_POST["state"])){echo $_POST["state"];}?>" id="state" style="width: 25px!important;" class="text"><br>
 						</div>
 						<div class="span-2">
 							<label class="form-label" for="zip">Zip</label><br>
-							<input type="text" name="zip" value="<?php if (isset($_POST["zip"])){echo $_POST["zip"];}?>" id="zip" style="width: 75px!important;" class="text"><br>
+							<input type="text" name="zip" value="<?php if (isset($_GET["zip"])){echo $_GET["zip"];} ?><?php if (isset($_POST["zip"])){echo $_POST["zip"];}?>" id="zip" style="width: 75px!important;" class="text"><br>
 						</div>
 						<div class="span-4">
 							<label class="form-label" for="phone">Phone</label><br>
-							<input type="text" name="phone" value="<?php if (isset($_POST["phone"])){echo $_POST["phone"];}?>" id="phone" style="width: 120px!important;" class="text">
+							<input type="text" name="phone" value="<?php if (isset($_GET["phone"])){echo $_GET["phone"];} ?><?php if (isset($_POST["phone"])){echo $_POST["phone"];}?>" id="phone" style="width: 120px!important;" class="text">
 						</div>
 						<div class="span-4">
 							<label class="form-label" for="fax">Fax</label><br>
-							<input type="text" name="fax" value="<?php if (isset($_POST["fax"])){echo $_POST["fax"];}?>" id="fax" style="width: 120px!important;" class="text">
+							<input type="text" name="fax" value="<?php if (isset($_GET["fax"])){echo $_GET["fax"];} ?><?php if (isset($_POST["fax"])){echo $_POST["fax"];}?>" id="fax" style="width: 120px!important;" class="text">
 						</div>
 					</fieldset>
 				</div>
