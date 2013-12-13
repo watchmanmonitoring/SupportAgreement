@@ -8,7 +8,7 @@ A version of this agreement form is posted here:
 
 
 
-This agreement form is meant to be a launching board for your own offering.
+This agreement form is meant to be a launching board for your own offering. PleasePlease edit your copy, make it your own.
 
 
 * [Branch](https://help.github.com/articles/fork-a-repo#create-branches) this to help add features.  
