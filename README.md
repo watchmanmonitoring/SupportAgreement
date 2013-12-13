@@ -53,12 +53,28 @@ Your mileage will vary, but these will work for a common Virtual Private Servers
 * [Tell a friend.](http://www.watchmanmonitoring.com/refer)
 
 
-Prefilling the fields #TODO
+Pre-filling the fields with formatted URL's
 ===============
 
-These work in our Perl form, will be added to the PHP version.
+The [problem with choice](http://www.ted.com/talks/barry_schwartz_on_the_paradox_of_choice.html) is that people want to make the right one.  
 
-Values:
+This agreement form helps consultants and end users alike by allowing the consultant to craft a URL which pre-fills the agreement form, and allows the end-user to adjust as they see fit.
+
+Review below the values available for pre-filling, and sample URL's which demonstrate usage.
+
+Demographic values:
+* firstname
+* lastname
+* email
+* address
+* city
+* state
+* zip
+* phone
+* fax
+
+
+Agreement Values:
 
 * monitoring  
 * monitoring-family  
@@ -70,13 +86,16 @@ Values:
 * hours  
 
 
-
-
 Examples:  
-https://www.watchmanmonitoring.com/sample-agreement/?personal=2  
-https://www.watchmanmonitoring.com/sample-agreement/?personal=2&monitoring=10  
-https://www.watchmanmonitoring.com/sample-agreement/?personal=1&servers=2  
-https://www.watchmanmonitoring.com/sample-agreement/?personal=2&monitoring=5&servers=1&hours=10  
+
+Amy Smith wants her three point of sale computers monitored:  
+`https://www.watchmanmonitoring.com/sample-agreement/?firstname=Amy&lastname=smith&monitoring=3`  
+
+Bill wants personal support, and his laptop monitored:
+`https://www.watchmanmonitoring.com/sample-agreement/?name=Bill&personal=1&monitoring=1`  
+
+Chris Jones wants his server & all the computers in their office monitored, wants to pre-pay 10 hours of labor a month, and can fill in his own name ;-)  
+`https://www.watchmanmonitoring.com/sample-agreement/?personal=1&monitoring=12&servers=1&hours=10`  
 
 
 
