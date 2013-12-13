@@ -89,13 +89,13 @@ Agreement Values:
 Examples:  
 
 Amy Smith wants her three point of sale computers monitored:  
-`https://www.watchmanmonitoring.com/sample-agreement/?firstname=Amy&lastname=smith&monitoring=3`  
+https://www.watchmanmonitoring.com/sample-agreement/?firstname=Amy&lastname=Smith&monitoring=3  
 
 Bill wants personal support, and his laptop monitored:
-`https://www.watchmanmonitoring.com/sample-agreement/?name=Bill&personal=1&monitoring=1`  
+https://www.watchmanmonitoring.com/sample-agreement/?name=Bill&personal=1&monitoring=1  
 
 Chris Jones wants his server & all the computers in their office monitored, wants to pre-pay 10 hours of labor a month, and can fill in his own name ;-)  
-`https://www.watchmanmonitoring.com/sample-agreement/?personal=1&monitoring=12&servers=1&hours=10`  
+https://www.watchmanmonitoring.com/sample-agreement/?personal=1&monitoring=12&servers=1&hours=10  
 
 
 
