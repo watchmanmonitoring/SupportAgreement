@@ -8,7 +8,7 @@ A version of this agreement form is posted here:
 
 
 
-This agreement form is meant to be a launching board for your own offering. PleasePlease edit your copy, make it your own.
+This agreement form is meant to be a launching board for your own offering. Please edit your copy, make it your own.
 
 
 * [Branch](https://help.github.com/articles/fork-a-repo#create-branches) this to help add features.  
@@ -17,6 +17,7 @@ This agreement form is meant to be a launching board for your own offering. Plea
 
 Wish this would do something it didn't? [Create an issue!](https://github.com/watchmanmonitoring/SupportAgreement/issues)
 
+Need a hand editing it? [Check out this Fiverr](http://fiverr.com/csssimple/provide-you-with-a-computer-support-agreement-form)
 
 System Requirements
 ==================
