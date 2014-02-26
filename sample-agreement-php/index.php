@@ -1,6 +1,7 @@
 <?php
 
 /* Listed below are the variables that contain form item names, price, and description. */
+/* These are all serving samples - feel free to rename and reprice in a fashion that works for you. */
 
 $item1name = 'Monitored Computers';
 $item1price = 10;
@@ -33,6 +34,8 @@ $item7description = "(Per Person, 5 User minimum) <br />All needed email, phone,
 $item8name = 'Monthly Prepaid Hours';
 $item8price = 100;
 $item8description = "(2 hours per month minimum) <br />1/3 off our stock hourly rate.<br />";
+
+$annualmultiplier = '0.90'; // enter the value of any annual discount, 0.90 = 10% off
 
 $error = "";
 
@@ -614,7 +617,7 @@ else {
 							<tr>
 
 								<td valign="bottom" colspan="1" align="left" style="text-align: left;" class="bvalign">
-									<span style="font-size: 10px;"><input type="checkbox" style="" name="billAnnually" value="0.90" id="billAnnually"/>If you would prefer to pay annually,<br>we offer a 10% convenience discount.</span>
+									<span style="font-size: 10px;"><input type="checkbox" style="" name="billAnnually" <?php echo $annualmultiplier; ?> id="billAnnually"/>If you would prefer to pay annually,<br>we offer a 10% convenience discount.</span>
 								</td>
 								<td valign="middle" colspan="2" align="right" style="text-align: right;" class="bvalign" id="annually_spot">
 									<span id="annually_total_label" style="font-size: 17px; ">Annual Total</span>
