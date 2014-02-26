@@ -4,7 +4,11 @@
 /* These are all serving samples - feel free to rename and reprice in a fashion that works for you. */
 
 $mycompanyname = 'My Company Yo';
-$mycompanyaddress '123 Main St';
+$mycompanyaddress = '123 Main St';
+$mycompanycity = 'Anytown';
+$mycompanystate = 'NY';
+$mycompanyzip = '70809';
+$mycompanyphone = '+1-408-352-6145';
 
 
 $item1name = 'Monitored Computers';
@@ -201,7 +205,7 @@ mail($to,$subject,$message,$headers);
 	<body id="index" class="index" onload="document.forms.pay.company.focus()">
 		<div class="container">
 			<!-- inactive class - showgrid -->
-			<h4 class="printme">My Company, Inc.<br />123 Main Street<br />Anytown, Anywhere<br />+1-408-352-6145</h4>
+			<h4 class="printme"><?php echo $mycompanyname; ?><br /><?php echo $mycompanyaddress; ?><br /><?php echo $mycompanycity; ?>, <?php echo $mycompanystate; ?> <?php echo $mycompanyzip; ?><br /><?php echo $mycompanyphone; ?></h4>
 			<h2 id="mylogo">
 				<img src="logo.png" alt="" class="imageo" />
 				<br>
@@ -231,7 +235,7 @@ mail($to,$subject,$message,$headers);
 				Thank you for your business and continued support.
 				</p>
 
-				<p style="text-align: right;"><em>Sincerely,</em><br> <strong>Allen Hancock</strong> and the <strong><?php echo $mycompanyname; ?></strong></p>
+				<p style="text-align: right;"><em>Sincerely,</em><br> <strong><?php echo $mycompanycontact; ?></strong> and <strong><?php echo $mycompanyname; ?></strong></p>
 
 			</div>
 			<hr>
@@ -317,7 +321,7 @@ mail($to,$subject,$message,$headers);
 			<br><br>
 		</div><!-- close: content -->
 		<div class="container">
-			<p><strong>Please print, sign, and return this form. Either in person, mail, or fax to +1-408-352-6145<strong></p>
+			<p><strong>Please print, sign, and return this form. Either in person, mail, or fax to <?php echo $mycompanyfax; ?><strong></p>
 		</div>
 		<div id="footer">
 			<!-- Footer Stuff -->
@@ -365,7 +369,7 @@ else {
 	<body id="index" class="index">
 		<div class="container">
 			<!-- inactive class - showgrid -->
-			<h4 class="printme"><?php echo $mycompanyname; ?><br />123 Main Street<br />Anytown, Anywhere<br />+1-408-352-6145</h4>
+			<h4 class="printme"><?php echo $mycompanyname; ?><br /><?php echo $mycompanyaddress; ?><br /><?php echo $mycompanycity; ?>, <?php echo $mycompanystate; ?> <?php echo $mycompanyzip; ?><br /><?php echo $mycompanyphone; ?></h4>
 			<h2 id="mylogo">
 				<br>
 				<small>Monthly Support Agreement</small>
