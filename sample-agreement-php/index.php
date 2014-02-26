@@ -3,6 +3,8 @@
 /* Listed below are the variables that contain form item names, price, and description. */
 /* These are all serving samples - feel free to rename and reprice in a fashion that works for you. */
 
+
+
 $item1name = 'Monitored Computers';
 $item1price = 10;
 $item1description = 'Active monitoring for impending failure for each computer with Watchman Monitoring.';
@@ -104,12 +106,12 @@ $phone = $_POST["phone"];
 
 $qty_item_1 = $_POST["qty_item_1"];
 $qty_item_2 = $_POST["qty_item_2"];
-$qty_item_8 = $_POST["qty_item_8"];
 $qty_item_3 = $_POST["qty_item_3"];
 $qty_item_4 = $_POST["qty_item_4"];
 $qty_item_5 = $_POST["qty_item_5"];
 $qty_item_6 = $_POST["qty_item_6"];
 $qty_item_7 = $_POST["qty_item_7"];
+$qty_item_8 = $_POST["qty_item_8"];
 
 $message = "
 --Personal Information--
@@ -123,14 +125,14 @@ Zip: $zip
 Phone: $phone
 
 --Agreement Information--
-Personal Support Users:  $qty_item_1
-Monitored Computers:  $qty_item_2
-Monitoring Family Pack: $qty_item_8
-Monitored Servers:  $qty_item_3
-Managed Clients:  $qty_item_4
-Windows Servers:  $qty_item_5
-Prepaid Hours:  $qty_item_6
-Premier Support: $qty_item_7
+<?php echo $item1name; ?>:  $qty_item_1
+<?php echo $item2name; ?>:  $qty_item_2
+<?php echo $item3name; ?>:  $qty_item_8
+<?php echo $item3name; ?>:  $qty_item_3
+<?php echo $item3name; ?>:  $qty_item_4
+<?php echo $item3name; ?>:  $qty_item_5
+<?php echo $item3name; ?>:  $qty_item_6
+<?php echo $item3name; ?>:  $qty_item_7
 Amount to be billed: $agreementAmount
 Billing interval: $agreementText
 ";
