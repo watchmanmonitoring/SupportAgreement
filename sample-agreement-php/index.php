@@ -3,6 +3,8 @@
 /* Listed below are the variables that contain form item names, price, and description. */
 /* These are all serving samples - feel free to rename and reprice in a fashion that works for you. */
 
+$mycompanyname = 'My Company Yo';
+$mycompanyaddress '123 Main St';
 
 
 $item1name = 'Monitored Computers';
@@ -27,7 +29,7 @@ $item5description = "Active monitoring, maintenance updates, verification of bac
 
 $item6name = 'Personal Support Users';
 $item6price = 25;
-$item6description = "The total number of people who will be contacting MyCompany, Inc. for technical support.";
+$item6description = "The total number of people who will be contacting <?php echo $mycompanyname; ?> for technical support.";
 
 $item7name = 'Premier Support Users';
 $item7price = 70;
@@ -149,7 +151,7 @@ mail($to,$subject,$message,$headers);
 <html lang="en">
 	<head>
 		<title>
-			MyCompany Service Agreement Signup Form
+			<?php echo $mycompanyname; ?> Service Agreement Signup Form
 		</title><!-- Framework CSS -->
 		<link rel="stylesheet" href="jquery.tooltip.css" type="text/css" media="screen, projection">
 		<link rel="stylesheet" href="screen.css" type="text/css" media="print, screen, projection">
@@ -221,7 +223,7 @@ mail($to,$subject,$message,$headers);
 					<li>Automated monitoring and reporting on the overall health of your computer</li>
 					<li>A chance to identify small problems before they get develop to large ones, or to data loss.</li>
 					<li>Active notification of issues Watchman Monitoring finds as it checks your backup status, hard drive, and more.</li>
-					<li>You get peace of mind knowing that MyCompany, Inc. will contact you if your computer is showing signs of failure.</li>
+					<li>You get peace of mind knowing that <?php echo $mycompanyname; ?> will contact you if your computer is showing signs of failure.</li>
 				</ul>
 				<p>
 				We will enter your agreement into our system, send your invoice, and coordinate payment information with you directly.
@@ -229,7 +231,7 @@ mail($to,$subject,$message,$headers);
 				Thank you for your business and continued support.
 				</p>
 
-				<p style="text-align: right;"><em>Sincerely,</em><br> <strong>Allen Hancock</strong> and the <strong>MyCompany, Inc.</strong></p>
+				<p style="text-align: right;"><em>Sincerely,</em><br> <strong>Allen Hancock</strong> and the <strong><?php echo $mycompanyname; ?></strong></p>
 
 			</div>
 			<hr>
@@ -363,7 +365,7 @@ else {
 	<body id="index" class="index">
 		<div class="container">
 			<!-- inactive class - showgrid -->
-			<h4 class="printme">MyCompany, Inc.<br />123 Main Street<br />Anytown, Anywhere<br />+1-408-352-6145</h4>
+			<h4 class="printme"><?php echo $mycompanyname; ?><br />123 Main Street<br />Anytown, Anywhere<br />+1-408-352-6145</h4>
 			<h2 id="mylogo">
 				<br>
 				<small>Monthly Support Agreement</small>
@@ -376,9 +378,9 @@ else {
 
 			<hr>
 			<div>
-				<h3 id=""><strong>Thank you for choosing the MyCompany, Inc.</strong></h3>
+				<h3 id=""><strong>Thank you for choosing <?php echo $mycompanyname; ?></strong></h3>
 				<p>
-				This Monthly Support Agreement sign-up form creates an agreement between MyCompany, Inc. and you, the Client.
+				This Monthly Support Agreement sign-up form creates an agreement between <?php echo $mycompanyname; ?> and you, the Client.
 				</p>
 
 				<h3 id=""><strong>Members of our Personal Support agreement receive:</strong></h3>
@@ -393,7 +395,7 @@ else {
 					<li>Automated monitoring and reporting on the overall health of your computer, via Watchman Monitoring</li>
 					<li>A chance to identify small problems before they get develop to large ones, or to data loss.</li>
 					<li>Active notification of issues discovered by Watchman Monitoring, as it checks your backup status, hard drive, and more.</li>
-					<li>You get peace of mind knowing that the MyCompany, Inc. will contact you if your computer is showing signs of failure.</li>
+					<li>You get peace of mind knowing that the <?php echo $mycompanyname; ?> will contact you if your computer is showing signs of failure.</li>
 				</ul>
 
 			<h3 id=""><strong>To create your support agreement</strong></h3>
@@ -409,7 +411,7 @@ else {
 		        	We are happy to speak with you to create your agreement. Call +1-408-352-6145.
 				</p>
 
-				<p style="text-align: right;"><em>Sincerely,</em><br> <strong>Allen Hancock</strong> and <strong>MyCompany, Inc.</strong></p>
+				<p style="text-align: right;"><em>Sincerely,</em><br> <strong>Allen Hancock</strong> and <strong><?php echo $mycompanyname; ?></strong></p>
 
 			</div>
 			<hr>
