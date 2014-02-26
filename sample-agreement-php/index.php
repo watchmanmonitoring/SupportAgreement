@@ -4,16 +4,18 @@
 /* These are all serving samples - feel free to rename and reprice in a fashion that works for you. */
 
 $mycompanyname = 'My Company Yo';
+$mycompanycontact = 'Allen Hancock';
 $mycompanyaddress = '123 Main St';
 $mycompanycity = 'Anytown';
 $mycompanystate = 'NY';
 $mycompanyzip = '70809';
 $mycompanyphone = '+1-408-352-6145';
 
+$mycustombranding = "Watchman Monitoring";// The name of your custom branded solution
 
 $item1name = 'Monitored Computers';
 $item1price = 10;
-$item1description = 'Active monitoring for impending failure for each computer with Watchman Monitoring.';
+$item1description = 'Active monitoring for impending failure for each computer with <?php echo $mycustombranding; ?>.';
 
 $item2name = 'Family Pack';
 $item2price = 15;
@@ -226,7 +228,7 @@ mail($to,$subject,$message,$headers);
 				<ul>
 					<li>Automated monitoring and reporting on the overall health of your computer</li>
 					<li>A chance to identify small problems before they get develop to large ones, or to data loss.</li>
-					<li>Active notification of issues Watchman Monitoring finds as it checks your backup status, hard drive, and more.</li>
+					<li>Active notification of issues <?php echo $mycustombranding; ?> finds as it checks your backup status, hard drive, and more.</li>
 					<li>You get peace of mind knowing that <?php echo $mycompanyname; ?> will contact you if your computer is showing signs of failure.</li>
 				</ul>
 				<p>
@@ -396,9 +398,9 @@ else {
 
 				<h3 id=""><strong>Monitored Computers have:</strong></h3>
 				<ul>
-					<li>Automated monitoring and reporting on the overall health of your computer, via Watchman Monitoring</li>
+					<li>Automated monitoring and reporting on the overall health of your computer, via <?php echo $mycustombranding; ?></li>
 					<li>A chance to identify small problems before they get develop to large ones, or to data loss.</li>
-					<li>Active notification of issues discovered by Watchman Monitoring, as it checks your backup status, hard drive, and more.</li>
+					<li>Active notification of issues discovered by <?php echo $mycustombranding; ?>, as it checks your backup status, hard drive, and more.</li>
 					<li>You get peace of mind knowing that the <?php echo $mycompanyname; ?> will contact you if your computer is showing signs of failure.</li>
 				</ul>
 
@@ -415,7 +417,7 @@ else {
 		        	We are happy to speak with you to create your agreement. Call +1-408-352-6145.
 				</p>
 
-				<p style="text-align: right;"><em>Sincerely,</em><br> <strong>Allen Hancock</strong> and <strong><?php echo $mycompanyname; ?></strong></p>
+				<p style="text-align: right;"><em>Sincerely,</em><br> <strong><?php echo $mycompanycontact; ?></strong> and <strong><?php echo $mycompanyname; ?></strong></p>
 
 			</div>
 			<hr>
