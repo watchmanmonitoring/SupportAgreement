@@ -37,7 +37,8 @@ $item8name = 'Monthly Prepaid Hours';
 $item8price = 100;
 $item8description = "(2 hours per month minimum) <br />1/3 off our stock hourly rate.<br />";
 
-$annualmultiplier = '0.90'; // enter the value of any annual discount, 0.90 = 10% off
+$annualdiscountmultiplier = '0.90'; // enter the value of any annual discount, 0.90 = 10% off
+$annualdiscountpercent = '10'; // you'll want this to match annualdiscountmultiplier
 
 $error = "";
 
@@ -82,12 +83,12 @@ if ($_SERVER["REQUEST_METHOD"] == "POST" && empty($error) ){
 
 								if (!empty($_POST["billAnnually"]))
 								{
-									$agreementText = 'Annual Billing';
+									$agreementText = 'Annual Total';
 									$agreementAmount = $_POST["annuallyTotal"];
 									}
 								else
 								{
-									$agreementText = 'Monthly Billing';
+									$agreementText = 'Monthly Total';
 									$agreementAmount = $_POST["grandTotal"];
 									}
 
@@ -127,12 +128,12 @@ Phone: $phone
 --Agreement Information--
 <?php echo $item1name; ?>:  $qty_item_1
 <?php echo $item2name; ?>:  $qty_item_2
-<?php echo $item3name; ?>:  $qty_item_8
 <?php echo $item3name; ?>:  $qty_item_3
-<?php echo $item3name; ?>:  $qty_item_4
-<?php echo $item3name; ?>:  $qty_item_5
-<?php echo $item3name; ?>:  $qty_item_6
-<?php echo $item3name; ?>:  $qty_item_7
+<?php echo $item4name; ?>:  $qty_item_4
+<?php echo $item5name; ?>:  $qty_item_5
+<?php echo $item6name; ?>:  $qty_item_6
+<?php echo $item7name; ?>:  $qty_item_7
+<?php echo $item8name; ?>:  $qty_item_8
 Amount to be billed: $agreementAmount
 Billing interval: $agreementText
 ";
@@ -619,7 +620,7 @@ else {
 							<tr>
 
 								<td valign="bottom" colspan="1" align="left" style="text-align: left;" class="bvalign">
-									<span style="font-size: 10px;"><input type="checkbox" style="" name="billAnnually" <?php echo $annualmultiplier; ?> id="billAnnually"/>If you would prefer to pay annually,<br>we offer a 10% convenience discount.</span>
+									<span style="font-size: 10px;"><input type="checkbox" style="" name="billAnnually" value=<?php echo $annualdiscountmultiplier; ?> id="billAnnually"/>If you would prefer to pay annually,<br>we offer a <?php echo $annualdiscountpercent; ?>% convenience discount.</span>
 								</td>
 								<td valign="middle" colspan="2" align="right" style="text-align: right;" class="bvalign" id="annually_spot">
 									<span id="annually_total_label" style="font-size: 17px; ">Annual Total</span>
