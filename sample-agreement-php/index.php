@@ -3,13 +3,17 @@
 /* Listed below are the variables that contain form item names, price, and description. */
 /* These are all serving samples - feel free to rename and reprice in a fashion that works for you. */
 
-$mycompanyname = 'My Company Yo';
+$mycompanyname = 'My Company Consulting Company, LLC';
 $mycompanycontact = 'Allen Hancock';
 $mycompanyaddress = '123 Main St';
 $mycompanycity = 'Anytown';
-$mycompanystate = 'NY';
+$mycompanystate = 'LA';
 $mycompanyzip = '70809';
 $mycompanyphone = '+1-408-352-6145';
+
+// Be sure to update lines 107-108 for the email delivery address
+// TODO move email/subject to variables
+// TODO move math on line 52/53 to one statement for annual discount %
 
 $mycustombranding = "Watchman Monitoring";// The name of your custom branded solution
 
