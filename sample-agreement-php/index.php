@@ -1,5 +1,39 @@
 <?php
 
+/* Listed below are the variables that contain form item names, price, and description. */
+
+$item1name = 'Monitored Computers';
+$item1price = 10;
+$item1description = 'Active monitoring for impending failure for each computer with Watchman Monitoring.';
+
+$item2name = 'Family Pack';
+$item2price = 15;
+$item2description = "Monitoring for a household's computers.";
+
+$item3name = 'Managed Computers';
+$item3price = 35;
+$item3description = "Active monitoring for pending failures, as well as system & application patch management.";
+
+$item4name = 'Managed Mac Servers';
+$item4price = 100;
+$item4description = "Active monitoring, maintenance updates & manual verification of backup systems.";
+
+$item5name = 'Managed Windows Servers';
+$item5price = 150;
+$item5description = "Active monitoring, maintenance updates, verification of backup systems and antivirus.";
+
+$item6name = 'Personal Support Users';
+$item6price = 25;
+$item6description = "The total number of people who will be contacting MyCompany, Inc. for technical support.";
+
+$item7name = 'Premier Support Users';
+$item7price = 70;
+$item7description = "(Per Person, 5 User minimum) <br />All needed email, phone, and remote support.";
+
+$item8name = 'Monthly Prepaid Hours';
+$item8price = 100;
+$item8description = "(2 hours per month minimum) <br />1/3 off our stock hourly rate.<br />";
+
 $error = "";
 
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
@@ -444,11 +478,11 @@ else {
 							</tr>
 							<tr>
 								<td valign="top">
-									<a style="color:black; text-decoration: none;" target=_blank href="http://www.watchmanmonitoring.com/sample-offering/"><strong>Monitored Computers</strong></a><br>
-									Active monitoring for impending failure for each computer with Watchman Monitoring.
+									<a style="color:black; text-decoration: none;" target=_blank href="http://www.watchmanmonitoring.com/sample-offering/"><strong><?php echo $item1name; ?></strong></a><br>
+									<?php echo $item1description; ?>
 								</td>
 								<td valign="top" align="right" style="padding-right: 10px; text-align: right;">
-									<span id="price_item_1">&#36;10</span>
+									<span id="price_item_1">&#36;<?php echo $item1price; ?></span>
 								</td>
 								<td valign="top" align="center" style="text-align: right;">
 									<input type="text" name="qty_item_2" id="qty_item_2" value="<?php if (isset($_GET["monitoring"])){echo $_GET["monitoring"];} ?><?php if (isset($_POST["qty_item_2"])){echo $_POST["qty_item_2"];}?>" size="2" style="text-align: right;"/>
@@ -458,11 +492,11 @@ else {
 							</tr>
 							<tr>
 								<td valign="top">
-									<a style="color:black; text-decoration: none;" target=_blank href="http://www.watchmanmonitoring.com/sample-offering/"><strong>Family Pack</strong></a><br>
-										Monitoring for a household's computers.
+									<a style="color:black; text-decoration: none;" target=_blank href="http://www.watchmanmonitoring.com/sample-offering/"><strong><?php echo $item2name; ?></strong></a><br>
+										<?php echo $item2description; ?>
 									</td>
 									<td valign="top" align="right" style="padding-right: 10px; text-align: right;">
-											<span id="price_item_8">&#36;15</span>
+											<span id="price_item_8">&#36;<?php echo $item2price; ?></span>
 									</td>
 									<td valign="top" align="center" style="text-align: right;">
 										<input type="text" name="qty_item_8" id="qty_item_8" value="<?php if (isset($_GET["monitoring-family"])){echo $_GET["monitoring-family"];} ?><?php if (isset($_POST["qty_item_8"])){echo $_POST["qty_item_8"];}?>" size="2" style="text-align: right;"/>
@@ -472,11 +506,11 @@ else {
 							</tr>
 							<tr >
 								<td valign="top">
-									<strong>Managed Computers</strong><br>
-									Active monitoring for pending failures, as well as system & application patch management.
+									<strong><?php echo $item3name; ?></strong><br>
+									<?php echo $item3description; ?>
 								</td>
 								<td valign="top" align="right" style="padding-right: 10px; text-align: right;">
-									<span id="price_item_4">&#36;35</span>
+									<span id="price_item_4">&#36;<?php echo $item3price; ?></span>
 								</td>
 								<td valign="top" align="center" style="text-align: right;">
 									<input type="text" name="qty_item_4" id="qty_item_4" value="<?php if (isset($_GET["managed"])){echo $_GET["managed"];} ?><?php if (isset($_POST["qty_item_4"])){echo $_POST["qty_item_4"];}?>" size="2" style="text-align: right;"/>
@@ -486,11 +520,11 @@ else {
 							</tr>
 							<tr>
 								<td valign="top">
-									<strong>Managed Mac Servers</strong><br>
-									Active monitoring, maintenance updates &amp; manual verification of backup systems.
+									<strong><?php echo $item4name; ?></strong><br>
+									<?php echo $item4description; ?>
 								</td>
 								<td valign="top" align="right" style="padding-right: 10px; text-align: right;">
-									<span id="price_item_3">&#36;100</span>
+									<span id="price_item_3">&#36;<?php echo $item4price; ?></span>
 								</td>
 								<td valign="top" align="center" style="text-align: right;">
 									<input type="text" name="qty_item_3" id="qty_item_3" value="<?php if (isset($_GET["servers"])){echo $_GET["servers"];} ?><?php if (isset($_POST["qty_item_3"])){echo $_POST["qty_item_3"];}?>" size="2" style="text-align: right;"/>
@@ -501,11 +535,11 @@ else {
 							</tr>
 							<tr >
 								<td valign="top">
-									<strong>Managed Windows Servers</strong><br>
-									Active monitoring, maintenance updates, verification of backup systems and antivirus.
+									<strong><?php echo $item5name; ?></strong><br>
+									<?php echo $item5description; ?>
 								</td>
 								<td valign="top" align="right" style="padding-right: 10px; text-align: right;">
-									<span id="price_item_5">&#36;150</span>
+									<span id="price_item_5">&#36;<?php echo $item5price; ?></span>
 								</td>
 								<td valign="top" align="center" style="text-align: right;">
 									<input type="text" name="qty_item_5" id="qty_item_5" value="<?php if (isset($_GET["winservers"])){echo $_GET["winservers"];} ?><?php if (isset($_POST["qty_item_5"])){echo $_POST["qty_item_5"];}?>" size="2" style="text-align: right;"/>
@@ -524,11 +558,11 @@ else {
 							<col style="width: 72px;" />
 							<tr>
 								<td valign="top">
-									<a style="color:black; text-decoration: none;" target=_blank href="http://www.watchmanmonitoring.com/sample-offering/"><strong> Personal Support Users</strong></a><br>
-									The total number of people who will be contacting MyCompany, Inc. for technical support.<br>
+									<a style="color:black; text-decoration: none;" target=_blank href="http://www.watchmanmonitoring.com/sample-offering/"><strong><?php echo $item6name; ?></strong></a><br>
+									<?php echo $item6description; ?><br>
 								</td>
 								<td valign="top" align="right" style="padding-right: 10px; text-align: right;">
-									<span id="price_item_2">&#36;25</span>
+									<span id="price_item_2">&#36;<?php echo $item6price; ?></span>
 								</td>
 								<td valign="top" align="center" style="text-align: right;">
 									<input type="text" name="qty_item_1" id="qty_item_1" value="<?php if (isset($_GET["personal"])){echo $_GET["personal"];} ?><?php if (isset($_POST["qty_item_1"])){echo $_POST["qty_item_1"];}?>" size="2" style="text-align: right;"/>
@@ -538,12 +572,11 @@ else {
 							</tr>
 							<tr>
 								<td valign="top">
-										<a style="color:black; text-decoration: none;" target=_blank href="http://www.watchmanmonitoring.com/sample-offering/"><strong>Premier Support Users</strong></a><br>
-									(Per Person, 5 User minimum)<br/>
-									All needed email, phone, and remote support
+										<a style="color:black; text-decoration: none;" target=_blank href="http://www.watchmanmonitoring.com/sample-offering/"><strong><?php echo $item7name; ?></strong></a><br>
+									<?php echo $item7description; ?>
 								</td>
 								<td valign="top" align="right" style="padding-right: 10px; text-align: right;">
-									<span id="price_item_7">&#36;70</span>
+									<span id="price_item_7">&#36;<?php echo $item7price; ?></span>
 								</td>
 								<td valign="top" align="center" style="text-align: right;">
 									<input type="text" name="qty_item_7" id="qty_item_7" value="<?php if (isset($_GET["premier"])){echo $_GET["premier"];} ?><?php if (isset($_POST["qty_item_7"])){echo $_POST["qty_item_7"];}?>" size="2" style="text-align: right;"/>
@@ -553,12 +586,11 @@ else {
 							</tr>
 							<tr >
 								<td valign="top">
-									<strong>Monthly Prepaid Hours</strong><br>
-									(2 hours per month minimum)<br/>
-									1/3 off our stock hourly rate<br>
+									<strong><?php echo $item8name; ?></strong><br>
+									<?php echo $item8description; ?>
 								</td>
 								<td valign="top" align="right" style="padding-right: 10px; text-align: right;">
-									<span id="price_item_6">&#36;100</span>
+									<span id="price_item_6">&#36;<?php echo $item8price; ?></span>
 								</td>
 								<td valign="top" align="center" style="text-align: right;">
 									<input type="text" name="qty_item_6" id="qty_item_6" value="<?php if (isset($_GET["hours"])){echo $_GET["hours"];} ?><?php if (isset($_POST["qty_item_6"])){echo $_POST["qty_item_6"];}?>" size="2" style="text-align: right;"/>
