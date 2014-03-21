@@ -403,7 +403,7 @@ else {
 				<h3 id=""><strong>Monitored Computers have:</strong></h3>
 				<ul>
 					<li>Automated monitoring and reporting on the overall health of your computer, via <?php echo $mycustombranding; ?></li>
-					<li>A chance to identify small problems before they get develop to large ones, or to data loss.</li>
+					<li>A chance to identify small problems before they become large ones, or lead to data loss.</li>
 					<li>Active notification of issues discovered by <?php echo $mycustombranding; ?>, as it checks your backup status, hard drive, and more.</li>
 					<li>You get peace of mind knowing that the <?php echo $mycompanyname; ?> will contact you if your computer is showing signs of failure.</li>
 				</ul>
@@ -417,8 +417,7 @@ else {
 					See the notes by each category to tailor the support agreement for your needs.<br>
 					We recommend adding Personal Support for each person who enjoys having our services available.<br>
 					Pre-payment for hours on a monthly basis is requested by some clients, however this is not a requirement for our services.<br>
-					We understand choosing the right agreement for you can be complex. <br>
-		        	We are happy to speak with you to create your agreement. Call +1-408-352-6145.
+					We understand choosing the right agreement for you can be complex. We are happy to speak with you to create your agreement. Call +1-408-352-6145.
 				</p>
 
 				<p style="text-align: right;"><em>Sincerely,</em><br> <strong><?php echo $mycompanycontact; ?></strong> and <strong><?php echo $mycompanyname; ?></strong></p>
