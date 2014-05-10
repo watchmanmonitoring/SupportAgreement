@@ -417,7 +417,7 @@ else {
 					See the notes by each category to tailor the support agreement for your needs.<br>
 					We recommend adding Personal Support for each person who enjoys having our services available.<br>
 					Pre-payment for hours on a monthly basis is requested by some clients, however this is not a requirement for our services.<br>
-					We understand choosing the right agreement for you can be complex. We are happy to speak with you to create your agreement. Call +1-408-352-6145.
+					We understand choosing the right agreement for you can be complex. We are happy to speak with you to create your agreement. Call <?php echo $mycompanyphone; ?>.
 				</p>
 
 				<p style="text-align: right;"><em>Sincerely,</em><br> <strong><?php echo $mycompanycontact; ?></strong> and <strong><?php echo $mycompanyname; ?></strong></p>
