@@ -10,6 +10,8 @@ $mycompanycity = 'Anytown';
 $mycompanystate = 'LA';
 $mycompanyzip = '70809';
 $mycompanyphone = '+1-408-352-6145';
+$mycompanyfax = '+1-408-352-6145';
+
 
 // Be sure to update lines 107-108 for the email delivery address
 // TODO move email/subject to variables
