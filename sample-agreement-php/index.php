@@ -10,6 +10,11 @@ $mycompanycity = 'Anytown';
 $mycompanystate = 'LA';
 $mycompanyzip = '70809';
 $mycompanyphone = '+1-408-352-6145';
+$mycompanyfax = '+1-408-352-6145';
+$mycompanyemail = "watchman@watchmanmonitoring.com";
+$mycompanyemailsubject = "Website Agreement Form";
+
+
 
 // Be sure to update lines 107-108 for the email delivery address
 // TODO move email/subject to variables
@@ -19,7 +24,7 @@ $mycustombranding = "Watchman Monitoring";// The name of your custom branded sol
 
 $item1name = 'Monitored Computers';
 $item1price = 10;
-$item1description = 'Active monitoring for impending failure for each computer with <?php echo $mycustombranding; ?>.';
+$item1description = 'Active monitoring for impending failure for each computer with ' . $mycustombranding . '.';
 
 $item2name = 'Family Pack';
 $item2price = 15;
@@ -39,7 +44,7 @@ $item5description = "Active monitoring, maintenance updates, verification of bac
 
 $item6name = 'Personal Support Users';
 $item6price = 25;
-$item6description = "The total number of people who will be contacting <?php echo $mycompanyname; ?> for technical support.";
+$item6description = "The total number of people who will be contacting " . $mycompanyname . " for technical support.";
 
 $item7name = 'Premier Support Users';
 $item7price = 70;
@@ -106,8 +111,6 @@ if ($_SERVER["REQUEST_METHOD"] == "POST" && empty($error) ){
 
 							?>
 							<?php
-$to = "watchman@watchmanmonitoring.com";
-$subject = "Website Agreement Form";
 $company = $_POST["company"];
 $name = $_POST["firstname"] . " " . $_POST["lastname"];
 $email = $_POST["email"];
@@ -138,14 +141,14 @@ Zip: $zip
 Phone: $phone
 
 --Agreement Information--
-<?php echo $item1name; ?>:  $qty_item_1
-<?php echo $item2name; ?>:  $qty_item_2
-<?php echo $item3name; ?>:  $qty_item_3
-<?php echo $item4name; ?>:  $qty_item_4
-<?php echo $item5name; ?>:  $qty_item_5
-<?php echo $item6name; ?>:  $qty_item_6
-<?php echo $item7name; ?>:  $qty_item_7
-<?php echo $item8name; ?>:  $qty_item_8
+$item1name:  $qty_item_1
+$item2name:  $qty_item_2
+$item3name:  $qty_item_3
+$item4name:  $qty_item_4
+$item5name:  $qty_item_5
+$item6name:  $qty_item_6
+$item7name:  $qty_item_7
+$item8name:  $qty_item_8
 Amount to be billed: $agreementAmount
 Billing interval: $agreementText
 ";
@@ -153,7 +156,7 @@ $from = $_POST["email"];
 $headers = "From:" . $from;
 
 
-mail($to,$subject,$message,$headers);
+mail($mycompanyemail,$mycompanyemailsubject,$message,$headers);
 ?>
 
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01//EN"
@@ -282,32 +285,36 @@ mail($to,$subject,$message,$headers);
 						<legend>Monthly Agreement Quantities</legend>
 						<table border="0" cellspacing="0" cellpadding="0">
 							<tr>
-								<td><label class="form-label" for="qty_item_2">Personal Support</label></td>
+								<td><label class="form-label" for="qty_item_1"><?php echo $item1name; ?></label></td>
 								<td style="text-align: right;"  align="right"><?php echo $_POST["qty_item_1"]; ?></td>
 							</tr>
 							<tr>
-								<td><label class="form-label" for="qty_item_1">Monitored Computers</label></td>
+								<td><label class="form-label" for="qty_item_2"><?php echo $item2name; ?></label></td>
 								<td style="text-align: right;"  align="right"><?php echo $_POST["qty_item_2"]; ?></td>
 							</tr>
 							<tr>
-								<td><label class="form-label" for="qty_item_3">Monitored Servers</label></td>
+								<td><label class="form-label" for="qty_item_3"><?php echo $item3name; ?></label></td>
 								<td style="text-align: right;"  align="right"><?php echo $_POST["qty_item_3"]; ?></td>
 							</tr>
 							<tr>
-								<td><label class="form-label" for="qty_item_4">Managed Clients</label></td>
+								<td><label class="form-label" for="qty_item_4"><?php echo $item4name; ?></label></td>
 								<td style="text-align: right;"  align="right"><?php echo $_POST["qty_item_4"]; ?></td>
 							</tr>
 							<tr>
-								<td><label class="form-label" for="qty_item_5">Windows Servers</label></td>
+								<td><label class="form-label" for="qty_item_5"><?php echo $item5name; ?></label></td>
 								<td style="text-align: right;"  align="right"><?php echo $_POST["qty_item_5"]; ?></td>
 							</tr>
 							<tr>
-								<td><label class="form-label" for="qty_item_6">Prepaid Hours</label></td>
+								<td><label class="form-label" for="qty_item_6"><?php echo $item6name; ?></label></td>
 								<td style="text-align: right;"  align="right"><?php echo $_POST["qty_item_6"]; ?></td>
 							</tr>
 							<tr>
-								<td><label class="form-label" for="qty_item_7">Premier Support</label></td>
+								<td><label class="form-label" for="qty_item_7"><?php echo $item7name; ?></label></td>
 								<td style="text-align: right;"  align="right"><?php echo $_POST["qty_item_7"]; ?></td>
+							</tr>
+							<tr>
+								<td><label class="form-label" for="qty_item_8"><?php echo $item8name; ?></label></td>
+								<td style="text-align: right;"  align="right"><?php echo $_POST["qty_item_8"]; ?></td>
 							</tr>
 							<tr>
 
