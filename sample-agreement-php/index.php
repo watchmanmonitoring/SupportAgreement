@@ -509,9 +509,9 @@ else {
 									<span id="price_item_1">&#36;<?php echo $item1price; ?></span>
 								</td>
 								<td valign="top" align="center" style="text-align: right;">
-									<input type="text" name="qty_item_2" id="qty_item_2" value="<?php if (isset($_GET["monitoring"])){echo $_GET["monitoring"];} ?><?php if (isset($_POST["qty_item_2"])){echo $_POST["qty_item_2"];}?>" size="2" style="text-align: right;"/>
+									<input type="text" name="qty_item_1" id="qty_item_1" value="<?php if (isset($_GET["monitoring"])){echo $_GET["monitoring"];} ?><?php if (isset($_POST["qty_item_1"])){echo $_POST["qty_item_1"];}?>" size="2" style="text-align: right;"/>
 								</td>
-								<td valign="top" style="text-align: right;" align="right" id="total_item_2">
+								<td valign="top" style="text-align: right;" align="right" id="total_item_1">
 								</td>
 							</tr>
 							<tr>
@@ -520,12 +520,12 @@ else {
 										<?php echo $item2description; ?>
 									</td>
 									<td valign="top" align="right" style="padding-right: 10px; text-align: right;">
-											<span id="price_item_8">&#36;<?php echo $item2price; ?></span>
+											<span id="price_item_2">&#36;<?php echo $item2price; ?></span>
 									</td>
 									<td valign="top" align="center" style="text-align: right;">
-										<input type="text" name="qty_item_8" id="qty_item_8" value="<?php if (isset($_GET["monitoring-family"])){echo $_GET["monitoring-family"];} ?><?php if (isset($_POST["qty_item_8"])){echo $_POST["qty_item_8"];}?>" size="2" style="text-align: right;"/>
+										<input type="text" name="qty_item_2" id="qty_item_2" value="<?php if (isset($_GET["monitoring-family"])){echo $_GET["monitoring-family"];} ?><?php if (isset($_POST["qty_item_2"])){echo $_POST["qty_item_2"];}?>" size="2" style="text-align: right;"/>
 									</td>
-									<td valign="top" style="text-align: right;" align="right" id="total_item_8">
+									<td valign="top" style="text-align: right;" align="right" id="total_item_2">
 								</td>
 							</tr>
 							<tr >
@@ -534,12 +534,12 @@ else {
 									<?php echo $item3description; ?>
 								</td>
 								<td valign="top" align="right" style="padding-right: 10px; text-align: right;">
-									<span id="price_item_4">&#36;<?php echo $item3price; ?></span>
+									<span id="price_item_3">&#36;<?php echo $item3price; ?></span>
 								</td>
 								<td valign="top" align="center" style="text-align: right;">
-									<input type="text" name="qty_item_4" id="qty_item_4" value="<?php if (isset($_GET["managed"])){echo $_GET["managed"];} ?><?php if (isset($_POST["qty_item_4"])){echo $_POST["qty_item_4"];}?>" size="2" style="text-align: right;"/>
+									<input type="text" name="qty_item_3" id="qty_item_3" value="<?php if (isset($_GET["managed"])){echo $_GET["managed"];} ?><?php if (isset($_POST["qty_item_3"])){echo $_POST["qty_item_3"];}?>" size="2" style="text-align: right;"/>
 								</td>
-								<td valign="top" style="text-align: right;" align="right" id="total_item_4">
+								<td valign="top" style="text-align: right;" align="right" id="total_item_3">
 								</td>
 							</tr>
 							<tr>
@@ -548,12 +548,12 @@ else {
 									<?php echo $item4description; ?>
 								</td>
 								<td valign="top" align="right" style="padding-right: 10px; text-align: right;">
-									<span id="price_item_3">&#36;<?php echo $item4price; ?></span>
+									<span id="price_item_4">&#36;<?php echo $item4price; ?></span>
 								</td>
 								<td valign="top" align="center" style="text-align: right;">
-									<input type="text" name="qty_item_3" id="qty_item_3" value="<?php if (isset($_GET["servers"])){echo $_GET["servers"];} ?><?php if (isset($_POST["qty_item_3"])){echo $_POST["qty_item_3"];}?>" size="2" style="text-align: right;"/>
+									<input type="text" name="qty_item_4" id="qty_item_4" value="<?php if (isset($_GET["servers"])){echo $_GET["servers"];} ?><?php if (isset($_POST["qty_item_4"])){echo $_POST["qty_item_4"];}?>" size="2" style="text-align: right;"/>
 								</td>
-								<td valign="top" style="text-align: right;" align="right" id="total_item_3">
+								<td valign="top" style="text-align: right;" align="right" id="total_item_4">
 
 								</td>
 							</tr>
@@ -586,12 +586,12 @@ else {
 									<?php echo $item6description; ?><br>
 								</td>
 								<td valign="top" align="right" style="padding-right: 10px; text-align: right;">
-									<span id="price_item_2">&#36;<?php echo $item6price; ?></span>
+									<span id="price_item_6">&#36;<?php echo $item6price; ?></span>
 								</td>
 								<td valign="top" align="center" style="text-align: right;">
-									<input type="text" name="qty_item_1" id="qty_item_1" value="<?php if (isset($_GET["personal"])){echo $_GET["personal"];} ?><?php if (isset($_POST["qty_item_1"])){echo $_POST["qty_item_1"];}?>" size="2" style="text-align: right;"/>
+									<input type="text" name="qty_item_6" id="qty_item_6" value="<?php if (isset($_GET["personal"])){echo $_GET["personal"];} ?><?php if (isset($_POST["qty_item_6"])){echo $_POST["qty_item_6"];}?>" size="2" style="text-align: right;"/>
 								</td>
-								<td valign="top" style="text-align: right;" align="right" id="total_item_1">
+								<td valign="top" style="text-align: right;" align="right" id="total_item_6">
 								</td>
 							</tr>
 							<tr>
@@ -614,12 +614,12 @@ else {
 									<?php echo $item8description; ?>
 								</td>
 								<td valign="top" align="right" style="padding-right: 10px; text-align: right;">
-									<span id="price_item_6">&#36;<?php echo $item8price; ?></span>
+									<span id="price_item_8">&#36;<?php echo $item8price; ?></span>
 								</td>
 								<td valign="top" align="center" style="text-align: right;">
-									<input type="text" name="qty_item_6" id="qty_item_6" value="<?php if (isset($_GET["hours"])){echo $_GET["hours"];} ?><?php if (isset($_POST["qty_item_6"])){echo $_POST["qty_item_6"];}?>" size="2" style="text-align: right;"/>
+									<input type="text" name="qty_item_8" id="qty_item_8" value="<?php if (isset($_GET["hours"])){echo $_GET["hours"];} ?><?php if (isset($_POST["qty_item_8"])){echo $_POST["qty_item_8"];}?>" size="2" style="text-align: right;"/>
 								</td>
-								<td valign="top" style="text-align: right;" align="right" id="total_item_6">
+								<td valign="top" style="text-align: right;" align="right" id="total_item_8">
 								</td>
 							</tr>
 							<tr>
