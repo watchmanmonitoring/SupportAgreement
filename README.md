@@ -41,17 +41,15 @@ Your mileage will vary, but these will work for a common Virtual Private Servers
 * [Download](https://github.com/watchmanmonitoring/SupportAgreement/releases/latest) a version of this form.
 * Unzip and upload the contents into the `agreement` folder.
 * Edit the [index.php](https://github.com/watchmanmonitoring/SupportAgreement/blob/master/sample-agreement-php/index.php) so that the words make sense to you, and the pricing is what you desire.
-* Edit the words in the [agreement.php](https://github.com/watchmanmonitoring/SupportAgreement/blob/master/sample-agreement-php/agreement.php) file to match.
-* Edit the email address near line 15 of `agreement.php` to send the agreements an address of your choosing.
 * Ensure the agreement folder's permissions are 755 (owner can write, everyone else can read & open)
 * Ensure the files in the folder are 744 (owner can write, everyone else can read)
-* Test the site by filling out the form. Notice that name and email address are required, and test that the page carries out the math you desire.
+* Test the site by filling out the form. Notice that name and email address are required, and check that the page's math is what you expect.
 * Ensure that you get copies of emails as you test the form.
 * Direct your end users to `http://yourwebsite.com/agreement` - in most cases this will not effect your current site.
 * Instruct your ends users to fill in the form with the agreement of their choosing, or [prefill](https://github.com/watchmanmonitoring/SupportAgreement/blob/master/README.md#prefilling-the-fields) the fields with a custom URL.
 * Your end users can print the resulting page to paper or PDF, sign it, and send it in.
-* Enter the agreement into your [Recurring Billing](http://www.watchmanmonitoring.com/community-access) solution.
-* [Tell a friend.](http://www.watchmanmonitoring.com/refer)
+* Enter the agreement into your Recurring Billing system.
+* [Tell a friend what you just set up.](https://www.watchmanmonitoring.com/refer)
 
 
 Pre-filling the fields with formatted URL's
