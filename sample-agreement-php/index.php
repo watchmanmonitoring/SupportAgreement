@@ -12,7 +12,7 @@ $mycompanyzip = '70809';
 $mycompanyphone = '+1-408-352-6145';
 $mycompanyfax = '+1-408-352-6145';
 $mycompanyemail = "watchman@watchmanmonitoring.com";
-$mycompanyemailsubject = "Support Agreement for"; // end-user company name will be appended when sending
+$mycompanyemailsubject = "Support Agreement"; // end-user's company name will be appended when sending
 
 
 
