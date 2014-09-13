@@ -20,7 +20,7 @@ $mycompanyemailsubject = "Website Agreement Form";
 // TODO move email/subject to variables
 // TODO move math on line 52/53 to one statement for annual discount %
 
-$mycustombranding = "Watchman Monitoring";// The name of your custom branded solution
+$mycustombranding = "Watchman Monitoring";// The name you use to refer to your monitoring solution. See https://www.watchmanmonitoring.com/branding for options
 
 $item1name = 'Monitored Computers';
 $item1price = 10;
