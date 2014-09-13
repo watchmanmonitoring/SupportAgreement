@@ -3,15 +3,15 @@
 /* Listed below are the variables that contain form item names, price, and description. */
 /* These are all serving samples - feel free to rename and reprice in a fashion that works for you. */
 
-$mycompanyname = 'My Company Consulting Company, LLC';
-$mycompanycontact = 'Allen Hancock';
+$mycompanyname = 'My Consulting Company, LLC';
+$mycompanycontact = 'Pat Smith';
 $mycompanyaddress = '123 Main St';
 $mycompanycity = 'Anytown';
 $mycompanystate = 'LA';
 $mycompanyzip = '70809';
 $mycompanyphone = '+1-408-352-6145';
 $mycompanyfax = '+1-408-352-6145';
-$mycompanyemail = "watchman@watchmanmonitoring.com";
+$mycompanyemail = "accounting@my consulting company.com";
 $mycompanyemailsubject = "Website Agreement Form";
 
 
