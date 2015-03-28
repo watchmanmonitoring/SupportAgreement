@@ -17,7 +17,7 @@ This agreement form is meant to be a launching board for your own offering. Plea
 
 Wish this would do something it didn't? [Create an issue!](https://github.com/watchmanmonitoring/SupportAgreement/issues)
 
-Need a hand editing it? [Check out this Fiverr](http://fiverr.com/csssimple/provide-you-with-a-computer-support-agreement-form)
+Need a hand editing it? [For $5 you can have it done for you](j.mp/customize-agreement)
 
 System Requirements
 ==================
