@@ -113,7 +113,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST" && empty($error) ){
 								if (!empty($_POST["billAnnually"]))
 								{
 									$agreementText = 'Annual Total';
-									$agreementAmount = $_POST["annuallyTotal"];
+									$agreementAmount = strip_tags($_POST["annuallyTotal"]);
 									}
 								else
 								{
