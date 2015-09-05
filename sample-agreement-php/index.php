@@ -164,12 +164,14 @@ $item8name:  $qty_item_8
 Amount to be billed: $agreementAmount
 Billing interval: $agreementText
 ";
-$from = $_POST["email"];
-$headers = "From:" . $from;
+
+$headers = 'From: ' . $email . "\r\n";
+$headers .= "MIME-Version: 1.0\r\n";
+$headers .= "Content-type: text/plain; charset=iso-8859-1\r\n";
+
+mail($mycompanyemail,$mycompanyemailsubject . " for " . $company,$message,$headers);
 
 
-$mycompanyemailsubject = $mycompanyemailsubject . " for " . $company;
-mail($mycompanyemail,$mycompanyemailsubject,$message,$headers);
 ?>
 
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01//EN"
