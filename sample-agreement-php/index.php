@@ -12,15 +12,12 @@ $mycompanyzip = '70809';
 $mycompanyphone = '+1-408-352-6145';
 $mycompanyfax = '+1-408-352-6145';
 $mycompanyemail = "watchman@watchmanmonitoring.com";
-$mycompanyemailsubject = "Support Agreement"; // end-user's company name will be appended when sending
+
+$mycustombranding = "Watchman Monitoring";// The name of your custom branded solution
+
+$mycompanyemailsubject = $mycustombranding . " Agreement Form";
 
 
-
-// Be sure to update lines 107-108 for the email delivery address
-// TODO move email/subject to variables
-// TODO move math on line 52/53 to one statement for annual discount %
-
-$mycustombranding = "Watchman Monitoring";// The name you use to refer to your monitoring solution. See https://www.watchmanmonitoring.com/branding for options
 
 $item1name = 'Monitored Computers';
 $item1price = 10;
