@@ -67,8 +67,7 @@ $item8description = '(2 hours per month minimum) <br />1/3 off our stock hourly 
 $item8url = 'http://www.watchmanmonitoring.com/sample-offering/';
 $item8get = hours;
 
-$annualdiscountmultiplier = '0.90'; // enter the value of any annual discount, 0.90 = 10% off
-$annualdiscountpercent = '10'; // you'll want this to match annualdiscountmultiplier
+$annualdiscountpercent = '10'; // enter the value of any annual discount, e.g. 10% off
 
 $error = "";
 
