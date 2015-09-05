@@ -177,6 +177,7 @@ $baseurl = (isset($_SERVER['HTTPS']) ? 'https://' : 'http://').$_SERVER['SERVER_
 
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01//EN"
 "http://www.w3.org/TR/html4/strict.dtd">
+<?php ob_start (); // Capture Form for email to customer ?>
 <html lang="en">
 	<head>
 		<title>
@@ -223,16 +224,16 @@ $baseurl = (isset($_SERVER['HTTPS']) ? 'https://' : 'http://').$_SERVER['SERVER_
 			}
 		</style>
 
-		<script src="jquery.min.js" type="text/javascript"></script>
-		<script src="jquery.dimensions.min.js" type="text/javascript"></script>
-		<script src="jquery.tooltip.js" type="text/javascript"></script>
+		<script src="<?php echo $baseurl ?>jquery.min.js" type="text/javascript"></script>
+		<script src="<?php echo $baseurl ?>jquery.dimensions.min.js" type="text/javascript"></script>
+		<script src="<?php echo $baseurl ?>jquery.tooltip.js" type="text/javascript"></script>
 	</head>
 	<body id="index" class="index" onload="document.forms.pay.company.focus()">
 		<div class="container">
 			<!-- inactive class - showgrid -->
 			<h4 class="printme"><?php echo $mycompanyname; ?><br /><?php echo $mycompanyaddress; ?><br /><?php echo $mycompanycity; ?>, <?php echo $mycompanystate; ?> <?php echo $mycompanyzip; ?><br /><?php echo $mycompanyphone; ?></h4>
 			<h2 id="mylogo">
-				<img src="logo.png" alt="" class="imageo" />
+				<img src="<?php echo $baseurl ?>logo.png" alt="" class="imageo" />
 				<br>
 				<small>Support Agreement</small>
 			</h2>
@@ -360,6 +361,16 @@ $baseurl = (isset($_SERVER['HTTPS']) ? 'https://' : 'http://').$_SERVER['SERVER_
 	</body>
 </html>
 <?php
+$customerform = ob_get_contents(); // Capture the form to a variable to send as email
+ob_end_flush();  // Flush the output buffer & display page
+
+// Send the form to the customer
+
+$headers = "From:" . $mycompanyemail . "\r\n";
+$headers .= "BCC: " . $mycompanyemail . "\r\n";
+$headers .= "MIME-Version: 1.0\r\n";
+$headers .= "Content-Type: text/html; charset=ISO-8859-1\r\n";
+mail($email,$mycompanyemailsubject,$customerform,$headers);
 
 }
 else {
@@ -518,7 +529,7 @@ else {
 							</tr>
 							<tr>
 								<td valign="top">
-									<a style="color:black; text-decoration: none;" target=_blank href="http://www.watchmanmonitoring.com/sample-offering/"><strong><?php echo $item1name; ?></strong></a><br>
+									<?php if ($item1url) { echo '<a style="color:black; text-decoration: none;" target=_blank href="' . $item1url . '">';} ?><strong><?php echo $item1name; ?></strong><?php if ($item1url) { echo '</a>'; } ?><br>
 									<?php echo $item1description; ?>
 								</td>
 								<td valign="top" align="right" style="padding-right: 10px; text-align: right;">
