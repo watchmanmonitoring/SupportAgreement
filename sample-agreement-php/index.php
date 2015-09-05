@@ -118,28 +118,28 @@ if ($_SERVER["REQUEST_METHOD"] == "POST" && empty($error) ){
 								else
 								{
 									$agreementText = 'Monthly Total';
-									$agreementAmount = $_POST["grandTotal"];
+									$agreementAmount = strip_tags($_POST["grandTotal"]);
 									}
 
 							?>
 							<?php
-$company = $_POST["company"];
-$name = $_POST["firstname"] . " " . $_POST["lastname"];
-$email = $_POST["email"];
-$address1 = $_POST["address1"];
-$city = $_POST["city"];
-$state = $_POST["state"];
-$zip = $_POST["zip"];
-$phone = $_POST["phone"];
+$company = strip_tags($_POST["company"]);
+$name = strip_tags($_POST["firstname"]) . " " . strip_tags($_POST["lastname"]);
+$email = strip_tags($_POST["email"]);
+$address1 = strip_tags($_POST["address1"]);
+$city = strip_tags($_POST["city"]);
+$state = strip_tags($_POST["state"]);
+$zip = strip_tags($_POST["zip"]);
+$phone = strip_tags($_POST["phone"]);
 
-$qty_item_1 = $_POST["qty_item_1"];
-$qty_item_2 = $_POST["qty_item_2"];
-$qty_item_3 = $_POST["qty_item_3"];
-$qty_item_4 = $_POST["qty_item_4"];
-$qty_item_5 = $_POST["qty_item_5"];
-$qty_item_6 = $_POST["qty_item_6"];
-$qty_item_7 = $_POST["qty_item_7"];
-$qty_item_8 = $_POST["qty_item_8"];
+$qty_item_1 = strip_tags($_POST["qty_item_1"]);
+$qty_item_2 = strip_tags($_POST["qty_item_2"]);
+$qty_item_3 = strip_tags($_POST["qty_item_3"]);
+$qty_item_4 = strip_tags($_POST["qty_item_4"]);
+$qty_item_5 = strip_tags($_POST["qty_item_5"]);
+$qty_item_6 = strip_tags($_POST["qty_item_6"]);
+$qty_item_7 = strip_tags($_POST["qty_item_7"]);
+$qty_item_8 = strip_tags($_POST["qty_item_8"]);
 
 $message = "
 --Personal Information--
