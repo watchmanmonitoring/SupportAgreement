@@ -301,38 +301,54 @@ $baseurl = (isset($_SERVER['HTTPS']) ? 'https://' : 'http://').$_SERVER['SERVER_
 					<fieldset>
 						<legend>Monthly Agreement Quantities</legend>
 						<table border="0" cellspacing="0" cellpadding="0">
+<?php if ($item1name) { ?>
 							<tr>
 								<td><label class="form-label" for="qty_item_1"><?php echo $item1name; ?></label></td>
 								<td style="text-align: right;"  align="right"><?php echo $_POST["qty_item_1"]; ?></td>
 							</tr>
+<?php } 
+if ($item2name) { ?>
 							<tr>
 								<td><label class="form-label" for="qty_item_2"><?php echo $item2name; ?></label></td>
 								<td style="text-align: right;"  align="right"><?php echo $_POST["qty_item_2"]; ?></td>
 							</tr>
+<?php } 
+if ($item3name) { ?>
 							<tr>
 								<td><label class="form-label" for="qty_item_3"><?php echo $item3name; ?></label></td>
 								<td style="text-align: right;"  align="right"><?php echo $_POST["qty_item_3"]; ?></td>
 							</tr>
+<?php } 
+if ($item4name) { ?>
 							<tr>
 								<td><label class="form-label" for="qty_item_4"><?php echo $item4name; ?></label></td>
 								<td style="text-align: right;"  align="right"><?php echo $_POST["qty_item_4"]; ?></td>
 							</tr>
+<?php } 
+if ($item5name) { ?>
 							<tr>
 								<td><label class="form-label" for="qty_item_5"><?php echo $item5name; ?></label></td>
 								<td style="text-align: right;"  align="right"><?php echo $_POST["qty_item_5"]; ?></td>
 							</tr>
+<?php } 
+if ($item6name) { ?>
 							<tr>
 								<td><label class="form-label" for="qty_item_6"><?php echo $item6name; ?></label></td>
 								<td style="text-align: right;"  align="right"><?php echo $_POST["qty_item_6"]; ?></td>
 							</tr>
+<?php } 
+if ($item7name) { ?>
 							<tr>
 								<td><label class="form-label" for="qty_item_7"><?php echo $item7name; ?></label></td>
 								<td style="text-align: right;"  align="right"><?php echo $_POST["qty_item_7"]; ?></td>
 							</tr>
+<?php } 
+if ($item8name) { ?>
 							<tr>
 								<td><label class="form-label" for="qty_item_8"><?php echo $item8name; ?></label></td>
 								<td style="text-align: right;"  align="right"><?php echo $_POST["qty_item_8"]; ?></td>
 							</tr>
+<?php } ?>
 							<tr>
 
 								<td><label class="form-label"><?php echo $agreementText; ?></label></td>
