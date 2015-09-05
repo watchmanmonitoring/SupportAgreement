@@ -653,7 +653,7 @@ else {
 							<tr>
 
 								<td valign="bottom" colspan="1" align="left" style="text-align: left;" class="bvalign">
-									<span style="font-size: 10px;"><input type="checkbox" style="" name="billAnnually" value=<?php echo $annualdiscountmultiplier; ?> id="billAnnually"/>If you would prefer to pay annually,<br>we offer a <?php echo $annualdiscountpercent; ?>% convenience discount.</span>
+									<span style="font-size: 10px;"><input type="checkbox" style="" name="billAnnually" value=<?php echo 1 - ($annualdiscountpercent / 100); ?> id="billAnnually"/>If you would prefer to pay annually,<br>we offer a <?php echo $annualdiscountpercent; ?>% convenience discount.</span>
 								</td>
 								<td valign="middle" colspan="2" align="right" style="text-align: right;" class="bvalign" id="annually_spot">
 									<span id="annually_total_label" style="font-size: 17px; ">Annual Total</span>
