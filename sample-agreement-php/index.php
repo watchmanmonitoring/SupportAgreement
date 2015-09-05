@@ -10,47 +10,63 @@ $mycompanycity = 'Anytown';
 $mycompanystate = 'LA';
 $mycompanyzip = '70809';
 $mycompanyphone = '+1-408-352-6145';
-
-// Be sure to update lines 107-108 for the email delivery address
-// TODO move email/subject to variables
-// TODO move math on line 52/53 to one statement for annual discount %
+$mycompanyemail = "watchman@watchmanmonitoring.com";
 
 $mycustombranding = "Watchman Monitoring";// The name of your custom branded solution
 
-$item1name = 'Monitored Computers';
+$mycompanyemailsubject = $mycustombranding . " Agreement Form";
+
+
+
+$item1name = 'Monitored Computers';  // Required
 $item1price = 10;
-$item1description = 'Active monitoring for impending failure for each computer with <?php echo $mycustombranding; ?>.';
+$item1description = 'Active monitoring for impending failure for each computer with ' . $mycustombranding .'.';
+$item1url = 'http://www.watchmanmonitoring.com/sample-offering/';  // set to '' to remove link
+$item1get = monitoring;
 
-$item2name = 'Family Pack';
+$item2name = 'Family Pack';  // Optional -- set to '' to skip
 $item2price = 15;
-$item2description = "Monitoring for a household's computers.";
+$item2description = 'Monitoring for a household\'s computers.';
+$item2url = '';  // set to '' to remove link
+$item2get = monitoring-family;
 
-$item3name = 'Managed Computers';
+$item3name = 'Managed Computers';  // Optional -- set to '' to skip
 $item3price = 35;
-$item3description = "Active monitoring for pending failures, as well as system & application patch management.";
+$item3description = 'Active monitoring for pending failures, as well as system & application patch management.';
+$item3url = 'http://www.watchmanmonitoring.com/sample-offering/';  // set to '' to remove link
+$item3get = managed;
 
-$item4name = 'Managed Mac Servers';
+$item4name = 'Managed Mac Servers';  // Optional -- set to '' to skip
 $item4price = 100;
-$item4description = "Active monitoring, maintenance updates & manual verification of backup systems.";
+$item4description = 'Active monitoring, maintenance updates & manual verification of backup systems.';
+$item4url = 'http://www.watchmanmonitoring.com/sample-offering/';  // set to '' to remove link
+$item4get = servers;
 
-$item5name = 'Managed Windows Servers';
+$item5name = 'Managed Windows Servers';  // Optional -- set to '' to skip
 $item5price = 150;
-$item5description = "Active monitoring, maintenance updates, verification of backup systems and antivirus.";
+$item5description = 'Active monitoring, maintenance updates, verification of backup systems and antivirus.';
+$item5url = 'http://www.watchmanmonitoring.com/sample-offering/';  // set to '' to remove link
+$item5get = winservers;
 
-$item6name = 'Personal Support Users';
+$item6name = 'Personal Support Users';  //Required
 $item6price = 25;
-$item6description = "The total number of people who will be contacting <?php echo $mycompanyname; ?> for technical support.";
+$item6description = 'The total number of people who will be contacting ' . $mycompanyname . ' for technical support.';
+$item6url = 'http://www.watchmanmonitoring.com/sample-offering/';  // set to '' to remove link
+$item6get = personal;
 
-$item7name = 'Premier Support Users';
+$item7name = 'Premier Support Users';  // Optional -- set to '' to skip
 $item7price = 70;
-$item7description = "(Per Person, 5 User minimum) <br />All needed email, phone, and remote support.";
+$item7description = '(Per Person, 5 User minimum) <br />All needed email, phone, and remote support.';
+$item7url = 'http://www.watchmanmonitoring.com/sample-offering/';  // set to '' to remove link
+$item7get = premier;
 
-$item8name = 'Monthly Prepaid Hours';
+$item8name = 'Monthly Prepaid Hours';  // Optional -- set to '' to skip
 $item8price = 100;
-$item8description = "(2 hours per month minimum) <br />1/3 off our stock hourly rate.<br />";
+$item8description = '(2 hours per month minimum) <br />1/3 off our stock hourly rate.<br />';
+$item8url = 'http://www.watchmanmonitoring.com/sample-offering/';
+$item8get = hours;
 
-$annualdiscountmultiplier = '0.90'; // enter the value of any annual discount, 0.90 = 10% off
-$annualdiscountpercent = '10'; // you'll want this to match annualdiscountmultiplier
+$annualdiscountpercent = '10'; // enter the value of any annual discount, e.g. 10% off
 
 $error = "";
 
@@ -96,35 +112,33 @@ if ($_SERVER["REQUEST_METHOD"] == "POST" && empty($error) ){
 								if (!empty($_POST["billAnnually"]))
 								{
 									$agreementText = 'Annual Total';
-									$agreementAmount = $_POST["annuallyTotal"];
+									$agreementAmount = strip_tags($_POST["annuallyTotal"]);
 									}
 								else
 								{
 									$agreementText = 'Monthly Total';
-									$agreementAmount = $_POST["grandTotal"];
+									$agreementAmount = strip_tags($_POST["grandTotal"]);
 									}
 
 							?>
 							<?php
-$to = "watchman@watchmanmonitoring.com";
-$subject = "Website Agreement Form";
-$company = $_POST["company"];
-$name = $_POST["firstname"] . " " . $_POST["lastname"];
-$email = $_POST["email"];
-$address1 = $_POST["address1"];
-$city = $_POST["city"];
-$state = $_POST["state"];
-$zip = $_POST["zip"];
-$phone = $_POST["phone"];
+$company = strip_tags($_POST["company"]);
+$name = strip_tags($_POST["firstname"]) . " " . strip_tags($_POST["lastname"]);
+$email = strip_tags($_POST["email"]);
+$address1 = strip_tags($_POST["address1"]);
+$city = strip_tags($_POST["city"]);
+$state = strip_tags($_POST["state"]);
+$zip = strip_tags($_POST["zip"]);
+$phone = strip_tags($_POST["phone"]);
 
-$qty_item_1 = $_POST["qty_item_1"];
-$qty_item_2 = $_POST["qty_item_2"];
-$qty_item_3 = $_POST["qty_item_3"];
-$qty_item_4 = $_POST["qty_item_4"];
-$qty_item_5 = $_POST["qty_item_5"];
-$qty_item_6 = $_POST["qty_item_6"];
-$qty_item_7 = $_POST["qty_item_7"];
-$qty_item_8 = $_POST["qty_item_8"];
+$qty_item_1 = strip_tags($_POST["qty_item_1"]);
+$qty_item_2 = strip_tags($_POST["qty_item_2"]);
+$qty_item_3 = strip_tags($_POST["qty_item_3"]);
+$qty_item_4 = strip_tags($_POST["qty_item_4"]);
+$qty_item_5 = strip_tags($_POST["qty_item_5"]);
+$qty_item_6 = strip_tags($_POST["qty_item_6"]);
+$qty_item_7 = strip_tags($_POST["qty_item_7"]);
+$qty_item_8 = strip_tags($_POST["qty_item_8"]);
 
 $message = "
 --Personal Information--
@@ -138,34 +152,39 @@ Zip: $zip
 Phone: $phone
 
 --Agreement Information--
-<?php echo $item1name; ?>:  $qty_item_1
-<?php echo $item2name; ?>:  $qty_item_2
-<?php echo $item3name; ?>:  $qty_item_3
-<?php echo $item4name; ?>:  $qty_item_4
-<?php echo $item5name; ?>:  $qty_item_5
-<?php echo $item6name; ?>:  $qty_item_6
-<?php echo $item7name; ?>:  $qty_item_7
-<?php echo $item8name; ?>:  $qty_item_8
+$item1name:  $qty_item_1
+$item2name:  $qty_item_2
+$item3name:  $qty_item_3
+$item4name:  $qty_item_4
+$item5name:  $qty_item_5
+$item6name:  $qty_item_6
+$item7name:  $qty_item_7
+$item8name:  $qty_item_8
 Amount to be billed: $agreementAmount
 Billing interval: $agreementText
 ";
-$from = $_POST["email"];
-$headers = "From:" . $from;
+
+$headers = 'From: ' . $email . "\r\n";
+$headers .= "MIME-Version: 1.0\r\n";
+$headers .= "Content-type: text/plain; charset=iso-8859-1\r\n";
+
+mail($mycompanyemail,$mycompanyemailsubject . " for " . $company,$message,$headers);
 
 
-mail($to,$subject,$message,$headers);
+$baseurl = (isset($_SERVER['HTTPS']) ? 'https://' : 'http://').$_SERVER['SERVER_NAME'] . dirname($_SERVER['REQUEST_URI']) . '/';
 ?>
 
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01//EN"
 "http://www.w3.org/TR/html4/strict.dtd">
+<?php ob_start (); // Capture Form for email to customer ?>
 <html lang="en">
 	<head>
 		<title>
 			<?php echo $mycompanyname; ?> Service Agreement Signup Form
 		</title><!-- Framework CSS -->
-		<link rel="stylesheet" href="jquery.tooltip.css" type="text/css" media="screen, projection">
-		<link rel="stylesheet" href="screen.css" type="text/css" media="print, screen, projection">
-		<!--[if lt IE 8]><link rel="stylesheet" href="ie.css" type="text/css" media="screen, projection"><![endif]-->
+		<link rel="stylesheet" href="<?php echo $baseurl ?>jquery.tooltip.css" type="text/css" media="screen, projection">
+		<link rel="stylesheet" href="<?php echo $baseurl ?>screen.css" type="text/css" media="print, screen, projection">
+		<!--[if lt IE 8]><link rel="stylesheet" href="<?php echo $baseurl ?>ie.css" type="text/css" media="screen, projection"><![endif]-->
 		<style type="text/css" media="screen">
 			div fieldset.sigbox {
 				background-color: transparent;
@@ -204,16 +223,16 @@ mail($to,$subject,$message,$headers);
 			}
 		</style>
 
-		<script src="jquery.min.js" type="text/javascript"></script>
-		<script src="jquery.dimensions.min.js" type="text/javascript"></script>
-		<script src="jquery.tooltip.js" type="text/javascript"></script>
+		<script src="<?php echo $baseurl ?>jquery.min.js" type="text/javascript"></script>
+		<script src="<?php echo $baseurl ?>jquery.dimensions.min.js" type="text/javascript"></script>
+		<script src="<?php echo $baseurl ?>jquery.tooltip.js" type="text/javascript"></script>
 	</head>
 	<body id="index" class="index" onload="document.forms.pay.company.focus()">
 		<div class="container">
 			<!-- inactive class - showgrid -->
 			<h4 class="printme"><?php echo $mycompanyname; ?><br /><?php echo $mycompanyaddress; ?><br /><?php echo $mycompanycity; ?>, <?php echo $mycompanystate; ?> <?php echo $mycompanyzip; ?><br /><?php echo $mycompanyphone; ?></h4>
 			<h2 id="mylogo">
-				<img src="logo.png" alt="" class="imageo" />
+				<img src="<?php echo $baseurl ?>logo.png" alt="" class="imageo" />
 				<br>
 				<small>Support Agreement</small>
 			</h2>
@@ -281,34 +300,54 @@ mail($to,$subject,$message,$headers);
 					<fieldset>
 						<legend>Monthly Agreement Quantities</legend>
 						<table border="0" cellspacing="0" cellpadding="0">
+<?php if ($item1name) { ?>
 							<tr>
-								<td><label class="form-label" for="qty_item_2">Personal Support</label></td>
+								<td><label class="form-label" for="qty_item_1"><?php echo $item1name; ?></label></td>
 								<td style="text-align: right;"  align="right"><?php echo $_POST["qty_item_1"]; ?></td>
 							</tr>
+<?php } 
+if ($item2name) { ?>
 							<tr>
-								<td><label class="form-label" for="qty_item_1">Monitored Computers</label></td>
+								<td><label class="form-label" for="qty_item_2"><?php echo $item2name; ?></label></td>
 								<td style="text-align: right;"  align="right"><?php echo $_POST["qty_item_2"]; ?></td>
 							</tr>
+<?php } 
+if ($item3name) { ?>
 							<tr>
-								<td><label class="form-label" for="qty_item_3">Monitored Servers</label></td>
+								<td><label class="form-label" for="qty_item_3"><?php echo $item3name; ?></label></td>
 								<td style="text-align: right;"  align="right"><?php echo $_POST["qty_item_3"]; ?></td>
 							</tr>
+<?php } 
+if ($item4name) { ?>
 							<tr>
-								<td><label class="form-label" for="qty_item_4">Managed Clients</label></td>
+								<td><label class="form-label" for="qty_item_4"><?php echo $item4name; ?></label></td>
 								<td style="text-align: right;"  align="right"><?php echo $_POST["qty_item_4"]; ?></td>
 							</tr>
+<?php } 
+if ($item5name) { ?>
 							<tr>
-								<td><label class="form-label" for="qty_item_5">Windows Servers</label></td>
+								<td><label class="form-label" for="qty_item_5"><?php echo $item5name; ?></label></td>
 								<td style="text-align: right;"  align="right"><?php echo $_POST["qty_item_5"]; ?></td>
 							</tr>
+<?php } 
+if ($item6name) { ?>
 							<tr>
-								<td><label class="form-label" for="qty_item_6">Prepaid Hours</label></td>
+								<td><label class="form-label" for="qty_item_6"><?php echo $item6name; ?></label></td>
 								<td style="text-align: right;"  align="right"><?php echo $_POST["qty_item_6"]; ?></td>
 							</tr>
+<?php } 
+if ($item7name) { ?>
 							<tr>
-								<td><label class="form-label" for="qty_item_7">Premier Support</label></td>
+								<td><label class="form-label" for="qty_item_7"><?php echo $item7name; ?></label></td>
 								<td style="text-align: right;"  align="right"><?php echo $_POST["qty_item_7"]; ?></td>
 							</tr>
+<?php } 
+if ($item8name) { ?>
+							<tr>
+								<td><label class="form-label" for="qty_item_8"><?php echo $item8name; ?></label></td>
+								<td style="text-align: right;"  align="right"><?php echo $_POST["qty_item_8"]; ?></td>
+							</tr>
+<?php } ?>
 							<tr>
 
 								<td><label class="form-label"><?php echo $agreementText; ?></label></td>
@@ -337,6 +376,16 @@ mail($to,$subject,$message,$headers);
 	</body>
 </html>
 <?php
+$customerform = ob_get_contents(); // Capture the form to a variable to send as email
+ob_end_flush();  // Flush the output buffer & display page
+
+// Send the form to the customer
+
+$headers = "From:" . $mycompanyemail . "\r\n";
+$headers .= "BCC: " . $mycompanyemail . "\r\n";
+$headers .= "MIME-Version: 1.0\r\n";
+$headers .= "Content-Type: text/html; charset=ISO-8859-1\r\n";
+mail($email,$mycompanyemailsubject,$customerform,$headers);
 
 }
 else {
@@ -495,76 +544,82 @@ else {
 							</tr>
 							<tr>
 								<td valign="top">
-									<a style="color:black; text-decoration: none;" target=_blank href="http://www.watchmanmonitoring.com/sample-offering/"><strong><?php echo $item1name; ?></strong></a><br>
+									<?php if ($item1url) { echo '<a style="color:black; text-decoration: none;" target=_blank href="' . $item1url . '">';} ?><strong><?php echo $item1name; ?></strong><?php if ($item1url) { echo '</a>'; } ?><br>
 									<?php echo $item1description; ?>
 								</td>
 								<td valign="top" align="right" style="padding-right: 10px; text-align: right;">
 									<span id="price_item_1">&#36;<?php echo $item1price; ?></span>
 								</td>
 								<td valign="top" align="center" style="text-align: right;">
-									<input type="text" name="qty_item_2" id="qty_item_2" value="<?php if (isset($_GET["monitoring"])){echo $_GET["monitoring"];} ?><?php if (isset($_POST["qty_item_2"])){echo $_POST["qty_item_2"];}?>" size="2" style="text-align: right;"/>
+									<input type="text" name="qty_item_1" id="qty_item_1" value="<?php if (isset($_GET[$item1get])){echo $_GET[$item1get];} ?><?php if (isset($_POST["qty_item_1"])){echo $_POST["qty_item_1"];}?>" size="2" style="text-align: right;"/>
+								</td>
+								<td valign="top" style="text-align: right;" align="right" id="total_item_1">
+								</td>
+							</tr>
+<?php if ($item2name) { ?>
+							<tr>
+								<td valign="top">
+									<?php if ($item2url) { echo '<a style="color:black; text-decoration: none;" target=_blank href="' . $item1url . '">';} ?><strong><?php echo $item2name; ?></strong><?php if ($item2url) { echo '</a>'; } ?><br>
+									<?php echo $item2description; ?>
+								</td>
+								<td valign="top" align="right" style="padding-right: 10px; text-align: right;">
+									<span id="price_item_2">&#36;<?php echo $item2price; ?></span>
+								</td>
+								<td valign="top" align="center" style="text-align: right;">
+									<input type="text" name="qty_item_2" id="qty_item_2" value="<?php if (isset($_GET[$item2get])){echo $_GET[$item2get];} ?><?php if (isset($_POST["qty_item_2"])){echo $_POST["qty_item_2"];}?>" size="2" style="text-align: right;"/>
 								</td>
 								<td valign="top" style="text-align: right;" align="right" id="total_item_2">
 								</td>
 							</tr>
+<?php } ?>
+<?php if ($item3name) { ?>
 							<tr>
 								<td valign="top">
-									<a style="color:black; text-decoration: none;" target=_blank href="http://www.watchmanmonitoring.com/sample-offering/"><strong><?php echo $item2name; ?></strong></a><br>
-										<?php echo $item2description; ?>
-									</td>
-									<td valign="top" align="right" style="padding-right: 10px; text-align: right;">
-											<span id="price_item_8">&#36;<?php echo $item2price; ?></span>
-									</td>
-									<td valign="top" align="center" style="text-align: right;">
-										<input type="text" name="qty_item_8" id="qty_item_8" value="<?php if (isset($_GET["monitoring-family"])){echo $_GET["monitoring-family"];} ?><?php if (isset($_POST["qty_item_8"])){echo $_POST["qty_item_8"];}?>" size="2" style="text-align: right;"/>
-									</td>
-									<td valign="top" style="text-align: right;" align="right" id="total_item_8">
-								</td>
-							</tr>
-							<tr >
-								<td valign="top">
-									<strong><?php echo $item3name; ?></strong><br>
+									<?php if ($item3url) { echo '<a style="color:black; text-decoration: none;" target=_blank href="' . $item1url . '">';} ?><strong><?php echo $item3name; ?></strong><?php if ($item3url) { echo '</a>'; } ?><br>
 									<?php echo $item3description; ?>
 								</td>
 								<td valign="top" align="right" style="padding-right: 10px; text-align: right;">
-									<span id="price_item_4">&#36;<?php echo $item3price; ?></span>
+									<span id="price_item_3">&#36;<?php echo $item3price; ?></span>
 								</td>
 								<td valign="top" align="center" style="text-align: right;">
-									<input type="text" name="qty_item_4" id="qty_item_4" value="<?php if (isset($_GET["managed"])){echo $_GET["managed"];} ?><?php if (isset($_POST["qty_item_4"])){echo $_POST["qty_item_4"];}?>" size="2" style="text-align: right;"/>
+									<input type="text" name="qty_item_3" id="qty_item_3" value="<?php if (isset($_GET[$item3get])){echo $_GET[$item3get];} ?><?php if (isset($_POST["qty_item_3"])){echo $_POST["qty_item_3"];}?>" size="2" style="text-align: right;"/>
+								</td>
+								<td valign="top" style="text-align: right;" align="right" id="total_item_3">
+								</td>
+							</tr>
+<?php } ?>
+<?php if ($item4name) { ?>
+							<tr>
+								<td valign="top">
+									<?php if ($item4url) { echo '<a style="color:black; text-decoration: none;" target=_blank href="' . $item1url . '">';} ?><strong><?php echo $item4name; ?></strong><?php if ($item4url) { echo '</a>'; } ?><br>
+									<?php echo $item4description; ?>
+								</td>
+								<td valign="top" align="right" style="padding-right: 10px; text-align: right;">
+									<span id="price_item_4">&#36;<?php echo $item4price; ?></span>
+								</td>
+								<td valign="top" align="center" style="text-align: right;">
+									<input type="text" name="qty_item_4" id="qty_item_4" value="<?php if (isset($_GET[$item4get])){echo $_GET[$item4get];} ?><?php if (isset($_POST["qty_item_4"])){echo $_POST["qty_item_4"];}?>" size="2" style="text-align: right;"/>
 								</td>
 								<td valign="top" style="text-align: right;" align="right" id="total_item_4">
 								</td>
 							</tr>
+<?php } ?>
+<?php if ($item5name) { ?>
 							<tr>
 								<td valign="top">
-									<strong><?php echo $item4name; ?></strong><br>
-									<?php echo $item4description; ?>
-								</td>
-								<td valign="top" align="right" style="padding-right: 10px; text-align: right;">
-									<span id="price_item_3">&#36;<?php echo $item4price; ?></span>
-								</td>
-								<td valign="top" align="center" style="text-align: right;">
-									<input type="text" name="qty_item_3" id="qty_item_3" value="<?php if (isset($_GET["servers"])){echo $_GET["servers"];} ?><?php if (isset($_POST["qty_item_3"])){echo $_POST["qty_item_3"];}?>" size="2" style="text-align: right;"/>
-								</td>
-								<td valign="top" style="text-align: right;" align="right" id="total_item_3">
-
-								</td>
-							</tr>
-							<tr >
-								<td valign="top">
-									<strong><?php echo $item5name; ?></strong><br>
+									<?php if ($item5url) { echo '<a style="color:black; text-decoration: none;" target=_blank href="' . $item1url . '">';} ?><strong><?php echo $item5name; ?></strong><?php if ($item5url) { echo '</a>'; } ?><br>
 									<?php echo $item5description; ?>
 								</td>
 								<td valign="top" align="right" style="padding-right: 10px; text-align: right;">
 									<span id="price_item_5">&#36;<?php echo $item5price; ?></span>
 								</td>
 								<td valign="top" align="center" style="text-align: right;">
-									<input type="text" name="qty_item_5" id="qty_item_5" value="<?php if (isset($_GET["winservers"])){echo $_GET["winservers"];} ?><?php if (isset($_POST["qty_item_5"])){echo $_POST["qty_item_5"];}?>" size="2" style="text-align: right;"/>
+									<input type="text" name="qty_item_5" id="qty_item_5" value="<?php if (isset($_GET[$item5get])){echo $_GET[$item5get];} ?><?php if (isset($_POST["qty_item_5"])){echo $_POST["qty_item_5"];}?>" size="2" style="text-align: right;"/>
 								</td>
 								<td valign="top" style="text-align: right;" align="right" id="total_item_5">
-
 								</td>
 							</tr>
+<?php } ?>
 							</table>
 							<legend><span class="order_num">3</span> Support</legend>
 
@@ -573,48 +628,54 @@ else {
 							<col />
 							<col style="width: 40px;" />
 							<col style="width: 72px;" />
+<?php if ($item6name) { ?>
 							<tr>
 								<td valign="top">
-									<a style="color:black; text-decoration: none;" target=_blank href="http://www.watchmanmonitoring.com/sample-offering/"><strong><?php echo $item6name; ?></strong></a><br>
-									<?php echo $item6description; ?><br>
+									<?php if ($item6url) { echo '<a style="color:black; text-decoration: none;" target=_blank href="' . $item1url . '">';} ?><strong><?php echo $item6name; ?></strong><?php if ($item6url) { echo '</a>'; } ?><br>
+									<?php echo $item6description; ?>
 								</td>
 								<td valign="top" align="right" style="padding-right: 10px; text-align: right;">
-									<span id="price_item_2">&#36;<?php echo $item6price; ?></span>
+									<span id="price_item_6">&#36;<?php echo $item6price; ?></span>
 								</td>
 								<td valign="top" align="center" style="text-align: right;">
-									<input type="text" name="qty_item_1" id="qty_item_1" value="<?php if (isset($_GET["personal"])){echo $_GET["personal"];} ?><?php if (isset($_POST["qty_item_1"])){echo $_POST["qty_item_1"];}?>" size="2" style="text-align: right;"/>
+									<input type="text" name="qty_item_6" id="qty_item_6" value="<?php if (isset($_GET[$item6get])){echo $_GET[$item6get];} ?><?php if (isset($_POST["qty_item_6"])){echo $_POST["qty_item_6"];}?>" size="2" style="text-align: right;"/>
 								</td>
-								<td valign="top" style="text-align: right;" align="right" id="total_item_1">
+								<td valign="top" style="text-align: right;" align="right" id="total_item_6">
 								</td>
 							</tr>
+<?php } ?>
+<?php if ($item7name) { ?>
 							<tr>
 								<td valign="top">
-										<a style="color:black; text-decoration: none;" target=_blank href="http://www.watchmanmonitoring.com/sample-offering/"><strong><?php echo $item7name; ?></strong></a><br>
+									<?php if ($item7url) { echo '<a style="color:black; text-decoration: none;" target=_blank href="' . $item1url . '">';} ?><strong><?php echo $item7name; ?></strong><?php if ($item7url) { echo '</a>'; } ?><br>
 									<?php echo $item7description; ?>
 								</td>
 								<td valign="top" align="right" style="padding-right: 10px; text-align: right;">
 									<span id="price_item_7">&#36;<?php echo $item7price; ?></span>
 								</td>
 								<td valign="top" align="center" style="text-align: right;">
-									<input type="text" name="qty_item_7" id="qty_item_7" value="<?php if (isset($_GET["premier"])){echo $_GET["premier"];} ?><?php if (isset($_POST["qty_item_7"])){echo $_POST["qty_item_7"];}?>" size="2" style="text-align: right;"/>
+									<input type="text" name="qty_item_7" id="qty_item_7" value="<?php if (isset($_GET[$item7get])){echo $_GET[$item7get];} ?><?php if (isset($_POST["qty_item_7"])){echo $_POST["qty_item_7"];}?>" size="2" style="text-align: right;"/>
 								</td>
 								<td valign="top" style="text-align: right;" align="right" id="total_item_7">
 								</td>
 							</tr>
-							<tr >
+<?php } ?>
+<?php if ($item8name) { ?>
+							<tr>
 								<td valign="top">
-									<strong><?php echo $item8name; ?></strong><br>
+									<?php if ($item8url) { echo '<a style="color:black; text-decoration: none;" target=_blank href="' . $item1url . '">';} ?><strong><?php echo $item8name; ?></strong><?php if ($item8url) { echo '</a>'; } ?><br>
 									<?php echo $item8description; ?>
 								</td>
 								<td valign="top" align="right" style="padding-right: 10px; text-align: right;">
-									<span id="price_item_6">&#36;<?php echo $item8price; ?></span>
+									<span id="price_item_8">&#36;<?php echo $item8price; ?></span>
 								</td>
 								<td valign="top" align="center" style="text-align: right;">
-									<input type="text" name="qty_item_6" id="qty_item_6" value="<?php if (isset($_GET["hours"])){echo $_GET["hours"];} ?><?php if (isset($_POST["qty_item_6"])){echo $_POST["qty_item_6"];}?>" size="2" style="text-align: right;"/>
+									<input type="text" name="qty_item_8" id="qty_item_8" value="<?php if (isset($_GET[$item8get])){echo $_GET[$item8get];} ?><?php if (isset($_POST["qty_item_8"])){echo $_POST["qty_item_8"];}?>" size="2" style="text-align: right;"/>
 								</td>
-								<td valign="top" style="text-align: right;" align="right" id="total_item_6">
+								<td valign="top" style="text-align: right;" align="right" id="total_item_8">
 								</td>
 							</tr>
+<?php } ?>
 							<tr>
 								<td valign="bottom" colspan="3" align="right" style="text-align: right;" class="bvalign">
 									<span style="font-size: 17px; ">Monthly Total</span>
@@ -631,7 +692,7 @@ else {
 							<tr>
 
 								<td valign="bottom" colspan="1" align="left" style="text-align: left;" class="bvalign">
-									<span style="font-size: 10px;"><input type="checkbox" style="" name="billAnnually" value=<?php echo $annualdiscountmultiplier; ?> id="billAnnually"/>If you would prefer to pay annually,<br>we offer a <?php echo $annualdiscountpercent; ?>% convenience discount.</span>
+									<span style="font-size: 10px;"><input type="checkbox" style="" name="billAnnually" value=<?php echo 1 - ($annualdiscountpercent / 100); ?> id="billAnnually"/>If you would prefer to pay annually,<br>we offer a <?php echo $annualdiscountpercent; ?>% convenience discount.</span>
 								</td>
 								<td valign="middle" colspan="2" align="right" style="text-align: right;" class="bvalign" id="annually_spot">
 									<span id="annually_total_label" style="font-size: 17px; ">Annual Total</span>
