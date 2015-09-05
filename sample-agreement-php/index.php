@@ -172,6 +172,7 @@ $headers .= "Content-type: text/plain; charset=iso-8859-1\r\n";
 mail($mycompanyemail,$mycompanyemailsubject . " for " . $company,$message,$headers);
 
 
+$baseurl = (isset($_SERVER['HTTPS']) ? 'https://' : 'http://').$_SERVER['SERVER_NAME'] . dirname($_SERVER['REQUEST_URI']) . '/';
 ?>
 
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01//EN"
@@ -181,9 +182,9 @@ mail($mycompanyemail,$mycompanyemailsubject . " for " . $company,$message,$heade
 		<title>
 			<?php echo $mycompanyname; ?> Service Agreement Signup Form
 		</title><!-- Framework CSS -->
-		<link rel="stylesheet" href="jquery.tooltip.css" type="text/css" media="screen, projection">
-		<link rel="stylesheet" href="screen.css" type="text/css" media="print, screen, projection">
-		<!--[if lt IE 8]><link rel="stylesheet" href="ie.css" type="text/css" media="screen, projection"><![endif]-->
+		<link rel="stylesheet" href="<?php echo $baseurl ?>jquery.tooltip.css" type="text/css" media="screen, projection">
+		<link rel="stylesheet" href="<?php echo $baseurl ?>screen.css" type="text/css" media="print, screen, projection">
+		<!--[if lt IE 8]><link rel="stylesheet" href="<?php echo $baseurl ?>ie.css" type="text/css" media="screen, projection"><![endif]-->
 		<style type="text/css" media="screen">
 			div fieldset.sigbox {
 				background-color: transparent;
