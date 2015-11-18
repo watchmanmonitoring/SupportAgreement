@@ -69,6 +69,31 @@ $item8get = 'hours';
 
 $annualdiscountpercent = '10'; // enter the value of any annual discount, e.g. 10% off
 
+/* If you are having trouble with mail() aka sendmail. 
+Download the PHPMailer class from https://github.com/PHPMailer/PHPMailer
+Set $usePHPMailer to TRUE to include/use PHP Mailer,
+and set the following settings. */
+
+$usePHPMailer = FALSE;  // Set to TRUE to use PHPMailer
+
+if ($usePHPMailer) { 
+	require 'PHPMailer/PHPMailerAutoload.php';
+	$mail = new PHPMailer;
+	// $mail->SMTPDebug = 1;		// Uncomment for debugging
+	$mail->isSMTP();			// Set mailer to use SMTP
+	$mail->SMTPAuth   = true		// enable SMTP authentication
+	$mail->Port       = 587;		// set the SMTP port 25, 465, or 587
+	$mail->Host = 'smtp.myserver.com';	// Specify main and backup SMTP servers
+	$mail->SMTPAuth = true;			// Enable SMTP authentication
+	$mail->Username = 'username';		// SMTP username
+	$mail->Password = 'password';		// SMTP password
+	$mail->SMTPSecure = 'tls';		// Enable encryption, 'ssl' also accepted
+	/* Notes on Debugging SMTP: */
+	// $mail->SMTPDebug = 1; // will echo errors and server responses
+	// $mail->SMTPDebug = 2; // will echo errors, server responses and client messages
+	/* And finally, don't forget to disable debugging before going into production. */
+}
+
 $error = "";
 
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
@@ -165,12 +190,30 @@ Amount to be billed: $agreementAmount
 Billing interval: $agreementText
 ";
 
-$headers = 'From: ' . $email . "\r\n";
-$headers .= "MIME-Version: 1.0\r\n";
-$headers .= "Content-type: text/plain; charset=iso-8859-1\r\n";
+if ($usePHPMailer) { 
+	/* Send Summary Email with PHPMailer */
+	$mail->From = $email;
+	$mail->FromName = $name;
+	$mail->addAddress($mycompanyemail, $mycustombranding);     // Add a recipient
+	$mail->addReplyTo($email, $name);
+	$mail->WordWrap = 70;                                 // Set word wrap to 70 characters
+	$mail->isHTML(false);                                  // Set email format to text
+	$mail->Subject = $mycompanyemailsubject . ' for ' . $company;
+	$mail->Body    = $message;
+	if(!$mail->send()) {
+		echo 'Message could not be sent.';
+		echo 'Mailer Error: ' . $mail->ErrorInfo;
+	} else {
+	/*    echo 'Message has been sent'; */
+	}
 
-mail($mycompanyemail,$mycompanyemailsubject . " for " . $company,$message,$headers);
+} else {
+	$headers = 'From: ' . $email . "\r\n";
+	$headers .= "MIME-Version: 1.0\r\n";
+	$headers .= "Content-type: text/plain; charset=iso-8859-1\r\n";
 
+	mail($mycompanyemail,$mycompanyemailsubject . " for " . $company,$message,$headers);
+}
 
 $baseurl = (isset($_SERVER['HTTPS']) ? 'https://' : 'http://').$_SERVER['SERVER_NAME'] . dirname($_SERVER['REQUEST_URI']) . '/';
 ?>
@@ -381,13 +424,31 @@ $customerform = ob_get_contents(); // Capture the form to a variable to send as 
 ob_end_flush();  // Flush the output buffer & display page
 
 // Send the form to the customer
+if ($usePHPMailer) { 
+	/* Send form to the customer as Email with PHPMailer */
+	$mail->From = $mycompanyemail;
+	$mail->FromName = $mycustombranding;
+	$mail->addAddress($email, $name);     // Add a recipient
+	$mail->addBCC($mycompanyemail);       // Add a BCC to ourselves
+	$mail->addReplyTo($email, $name);
+	$mail->WordWrap = 70;                                 // Set word wrap to 70 characters
+	$mail->isHTML(true);                                  // Set email format to text
+	$mail->Subject = $mycompanyemailsubject;
+	$mail->Body    = $customerform;
+	if(!$mail->send()) {
+		echo 'Message could not be sent.';
+		echo 'Mailer Error: ' . $mail->ErrorInfo;
+	} else {
+	/*    echo 'Message has been sent'; */
+	}
 
-$headers = "From:" . $mycompanyemail . "\r\n";
-$headers .= "BCC: " . $mycompanyemail . "\r\n";
-$headers .= "MIME-Version: 1.0\r\n";
-$headers .= "Content-Type: text/html; charset=ISO-8859-1\r\n";
-mail($email,$mycompanyemailsubject,$customerform,$headers);
-
+} else {
+	$headers = "From:" . $mycompanyemail . "\r\n";
+	$headers .= "BCC: " . $mycompanyemail . "\r\n";
+	$headers .= "MIME-Version: 1.0\r\n";
+	$headers .= "Content-Type: text/html; charset=ISO-8859-1\r\n";
+	mail($email,$mycompanyemailsubject,$customerform,$headers);
+}
 }
 else {
 ?>
