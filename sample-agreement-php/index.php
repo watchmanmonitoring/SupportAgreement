@@ -23,49 +23,49 @@ $item1name = 'Monitored Computers';  // Required
 $item1price = 10;
 $item1description = 'Active monitoring for impending failure for each computer with ' . $mycustombranding .'.';
 $item1url = 'http://www.watchmanmonitoring.com/sample-offering/';  // set to '' to remove link
-$item1get = monitoring;
+$item1get = 'monitoring';
 
 $item2name = 'Family Pack';  // Optional -- set to '' to skip
 $item2price = 15;
 $item2description = 'Monitoring for a household\'s computers.';
 $item2url = '';  // set to '' to remove link
-$item2get = monitoring-family;
+$item2get = 'monitoring-family';
 
 $item3name = 'Managed Computers';  // Optional -- set to '' to skip
 $item3price = 35;
 $item3description = 'Active monitoring for pending failures, as well as system & application patch management.';
 $item3url = 'http://www.watchmanmonitoring.com/sample-offering/';  // set to '' to remove link
-$item3get = managed;
+$item3get = 'managed';
 
 $item4name = 'Managed Mac Servers';  // Optional -- set to '' to skip
 $item4price = 100;
 $item4description = 'Active monitoring, maintenance updates & manual verification of backup systems.';
 $item4url = 'http://www.watchmanmonitoring.com/sample-offering/';  // set to '' to remove link
-$item4get = servers;
+$item4get = 'servers';
 
 $item5name = 'Managed Windows Servers';  // Optional -- set to '' to skip
 $item5price = 150;
 $item5description = 'Active monitoring, maintenance updates, verification of backup systems and antivirus.';
 $item5url = 'http://www.watchmanmonitoring.com/sample-offering/';  // set to '' to remove link
-$item5get = winservers;
+$item5get = 'winservers';
 
 $item6name = 'Personal Support Users';  //Required
 $item6price = 25;
 $item6description = 'The total number of people who will be contacting ' . $mycompanyname . ' for technical support.';
 $item6url = 'http://www.watchmanmonitoring.com/sample-offering/';  // set to '' to remove link
-$item6get = personal;
+$item6get = 'personal';
 
 $item7name = 'Premier Support Users';  // Optional -- set to '' to skip
 $item7price = 70;
 $item7description = '(Per Person, 5 User minimum) <br />All needed email, phone, and remote support.';
 $item7url = 'http://www.watchmanmonitoring.com/sample-offering/';  // set to '' to remove link
-$item7get = premier;
+$item7get = 'premier';
 
 $item8name = 'Monthly Prepaid Hours';  // Optional -- set to '' to skip
 $item8price = 100;
 $item8description = '(2 hours per month minimum) <br />1/3 off our stock hourly rate.<br />';
 $item8url = 'http://www.watchmanmonitoring.com/sample-offering/';
-$item8get = hours;
+$item8get = 'hours';
 
 $annualdiscountpercent = '10'; // enter the value of any annual discount, e.g. 10% off
 
