@@ -132,14 +132,14 @@ $state = strip_tags($_POST["state"]);
 $zip = strip_tags($_POST["zip"]);
 $phone = strip_tags($_POST["phone"]);
 
-$qty_item_1 = strip_tags($_POST["qty_item_1"]);
-$qty_item_2 = strip_tags($_POST["qty_item_2"]);
-$qty_item_3 = strip_tags($_POST["qty_item_3"]);
-$qty_item_4 = strip_tags($_POST["qty_item_4"]);
-$qty_item_5 = strip_tags($_POST["qty_item_5"]);
-$qty_item_6 = strip_tags($_POST["qty_item_6"]);
-$qty_item_7 = strip_tags($_POST["qty_item_7"]);
-$qty_item_8 = strip_tags($_POST["qty_item_8"]);
+$qty_item_1 = isset($_POST["qty_item_1"]) ? strip_tags($_POST["qty_item_1"]) : '';
+$qty_item_2 = isset($_POST["qty_item_2"]) ? strip_tags($_POST["qty_item_2"]) : '';
+$qty_item_3 = isset($_POST["qty_item_3"]) ? strip_tags($_POST["qty_item_3"]) : '';
+$qty_item_4 = isset($_POST["qty_item_4"]) ? strip_tags($_POST["qty_item_4"]) : '';
+$qty_item_5 = isset($_POST["qty_item_5"]) ? strip_tags($_POST["qty_item_5"]) : '';
+$qty_item_6 = isset($_POST["qty_item_6"]) ? strip_tags($_POST["qty_item_6"]) : '';
+$qty_item_7 = isset($_POST["qty_item_7"]) ? strip_tags($_POST["qty_item_7"]) : '';
+$qty_item_8 = isset($_POST["qty_item_8"]) ? strip_tags($_POST["qty_item_8"]) : '';
 
 $message = "
 --Personal Information--
