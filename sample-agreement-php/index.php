@@ -23,51 +23,76 @@ $item1name = 'Monitored Computers';  // Required
 $item1price = 10;
 $item1description = 'Active monitoring for impending failure for each computer with ' . $mycustombranding .'.';
 $item1url = 'http://www.watchmanmonitoring.com/sample-offering/';  // set to '' to remove link
-$item1get = monitoring;
+$item1get = 'monitoring';
 
 $item2name = 'Family Pack';  // Optional -- set to '' to skip
 $item2price = 15;
 $item2description = 'Monitoring for a household\'s computers.';
 $item2url = '';  // set to '' to remove link
-$item2get = monitoring-family;
+$item2get = 'monitoring-family';
 
 $item3name = 'Managed Computers';  // Optional -- set to '' to skip
 $item3price = 35;
 $item3description = 'Active monitoring for pending failures, as well as system & application patch management.';
 $item3url = 'http://www.watchmanmonitoring.com/sample-offering/';  // set to '' to remove link
-$item3get = managed;
+$item3get = 'managed';
 
 $item4name = 'Managed Mac Servers';  // Optional -- set to '' to skip
 $item4price = 100;
 $item4description = 'Active monitoring, maintenance updates & manual verification of backup systems.';
 $item4url = 'http://www.watchmanmonitoring.com/sample-offering/';  // set to '' to remove link
-$item4get = servers;
+$item4get = 'servers';
 
 $item5name = 'Managed Windows Servers';  // Optional -- set to '' to skip
 $item5price = 150;
 $item5description = 'Active monitoring, maintenance updates, verification of backup systems and antivirus.';
 $item5url = 'http://www.watchmanmonitoring.com/sample-offering/';  // set to '' to remove link
-$item5get = winservers;
+$item5get = 'winservers';
 
 $item6name = 'Personal Support Users';  //Required
 $item6price = 25;
 $item6description = 'The total number of people who will be contacting ' . $mycompanyname . ' for technical support.';
 $item6url = 'http://www.watchmanmonitoring.com/sample-offering/';  // set to '' to remove link
-$item6get = personal;
+$item6get = 'personal';
 
 $item7name = 'Premier Support Users';  // Optional -- set to '' to skip
 $item7price = 70;
 $item7description = '(Per Person, 5 User minimum) <br />All needed email, phone, and remote support.';
 $item7url = 'http://www.watchmanmonitoring.com/sample-offering/';  // set to '' to remove link
-$item7get = premier;
+$item7get = 'premier';
 
 $item8name = 'Monthly Prepaid Hours';  // Optional -- set to '' to skip
 $item8price = 100;
 $item8description = '(2 hours per month minimum) <br />1/3 off our stock hourly rate.<br />';
 $item8url = 'http://www.watchmanmonitoring.com/sample-offering/';
-$item8get = hours;
+$item8get = 'hours';
 
 $annualdiscountpercent = '10'; // enter the value of any annual discount, e.g. 10% off
+
+/* If you are having trouble with mail() aka sendmail. 
+Download the PHPMailer class from https://github.com/PHPMailer/PHPMailer
+Set $usePHPMailer to TRUE to include/use PHP Mailer,
+and set the following settings. */
+
+$usePHPMailer = FALSE;  // Set to TRUE to use PHPMailer
+
+if ($usePHPMailer) { 
+	require 'PHPMailer/PHPMailerAutoload.php';
+	$mail = new PHPMailer;
+	// $mail->SMTPDebug = 1;		// Uncomment for debugging
+	$mail->isSMTP();			// Set mailer to use SMTP
+	$mail->SMTPAuth   = true		// enable SMTP authentication
+	$mail->Port       = 587;		// set the SMTP port 25, 465, or 587
+	$mail->Host = 'smtp.myserver.com';	// Specify main and backup SMTP servers
+	$mail->SMTPAuth = true;			// Enable SMTP authentication
+	$mail->Username = 'username';		// SMTP username
+	$mail->Password = 'password';		// SMTP password
+	$mail->SMTPSecure = 'tls';		// Enable encryption, 'ssl' also accepted
+	/* Notes on Debugging SMTP: */
+	// $mail->SMTPDebug = 1; // will echo errors and server responses
+	// $mail->SMTPDebug = 2; // will echo errors, server responses and client messages
+	/* And finally, don't forget to disable debugging before going into production. */
+}
 
 $error = "";
 
@@ -132,14 +157,14 @@ $state = strip_tags($_POST["state"]);
 $zip = strip_tags($_POST["zip"]);
 $phone = strip_tags($_POST["phone"]);
 
-$qty_item_1 = strip_tags($_POST["qty_item_1"]);
-$qty_item_2 = strip_tags($_POST["qty_item_2"]);
-$qty_item_3 = strip_tags($_POST["qty_item_3"]);
-$qty_item_4 = strip_tags($_POST["qty_item_4"]);
-$qty_item_5 = strip_tags($_POST["qty_item_5"]);
-$qty_item_6 = strip_tags($_POST["qty_item_6"]);
-$qty_item_7 = strip_tags($_POST["qty_item_7"]);
-$qty_item_8 = strip_tags($_POST["qty_item_8"]);
+$qty_item_1 = isset($_POST["qty_item_1"]) ? strip_tags($_POST["qty_item_1"]) : '';
+$qty_item_2 = isset($_POST["qty_item_2"]) ? strip_tags($_POST["qty_item_2"]) : '';
+$qty_item_3 = isset($_POST["qty_item_3"]) ? strip_tags($_POST["qty_item_3"]) : '';
+$qty_item_4 = isset($_POST["qty_item_4"]) ? strip_tags($_POST["qty_item_4"]) : '';
+$qty_item_5 = isset($_POST["qty_item_5"]) ? strip_tags($_POST["qty_item_5"]) : '';
+$qty_item_6 = isset($_POST["qty_item_6"]) ? strip_tags($_POST["qty_item_6"]) : '';
+$qty_item_7 = isset($_POST["qty_item_7"]) ? strip_tags($_POST["qty_item_7"]) : '';
+$qty_item_8 = isset($_POST["qty_item_8"]) ? strip_tags($_POST["qty_item_8"]) : '';
 
 $message = "
 --Personal Information--
@@ -165,12 +190,30 @@ Amount to be billed: $agreementAmount
 Billing interval: $agreementText
 ";
 
-$headers = 'From: ' . $email . "\r\n";
-$headers .= "MIME-Version: 1.0\r\n";
-$headers .= "Content-type: text/plain; charset=iso-8859-1\r\n";
+if ($usePHPMailer) { 
+	/* Send Summary Email with PHPMailer */
+	$mail->From = $email;
+	$mail->FromName = $name;
+	$mail->addAddress($mycompanyemail, $mycustombranding);     // Add a recipient
+	$mail->addReplyTo($email, $name);
+	$mail->WordWrap = 70;                                 // Set word wrap to 70 characters
+	$mail->isHTML(false);                                  // Set email format to text
+	$mail->Subject = $mycompanyemailsubject . ' for ' . $company;
+	$mail->Body    = $message;
+	if(!$mail->send()) {
+		echo 'Message could not be sent.';
+		echo 'Mailer Error: ' . $mail->ErrorInfo;
+	} else {
+	/*    echo 'Message has been sent'; */
+	}
 
-mail($mycompanyemail,$mycompanyemailsubject . " for " . $company,$message,$headers);
+} else {
+	$headers = 'From: ' . $email . "\r\n";
+	$headers .= "MIME-Version: 1.0\r\n";
+	$headers .= "Content-type: text/plain; charset=iso-8859-1\r\n";
 
+	mail($mycompanyemail,$mycompanyemailsubject . " for " . $company,$message,$headers);
+}
 
 $baseurl = (isset($_SERVER['HTTPS']) ? 'https://' : 'http://').$_SERVER['SERVER_NAME'] . dirname($_SERVER['REQUEST_URI']) . '/';
 ?>
@@ -381,13 +424,31 @@ $customerform = ob_get_contents(); // Capture the form to a variable to send as 
 ob_end_flush();  // Flush the output buffer & display page
 
 // Send the form to the customer
+if ($usePHPMailer) { 
+	/* Send form to the customer as Email with PHPMailer */
+	$mail->From = $mycompanyemail;
+	$mail->FromName = $mycustombranding;
+	$mail->addAddress($email, $name);     // Add a recipient
+	$mail->addBCC($mycompanyemail);       // Add a BCC to ourselves
+	$mail->addReplyTo($email, $name);
+	$mail->WordWrap = 70;                                 // Set word wrap to 70 characters
+	$mail->isHTML(true);                                  // Set email format to text
+	$mail->Subject = $mycompanyemailsubject;
+	$mail->Body    = $customerform;
+	if(!$mail->send()) {
+		echo 'Message could not be sent.';
+		echo 'Mailer Error: ' . $mail->ErrorInfo;
+	} else {
+	/*    echo 'Message has been sent'; */
+	}
 
-$headers = "From:" . $mycompanyemail . "\r\n";
-$headers .= "BCC: " . $mycompanyemail . "\r\n";
-$headers .= "MIME-Version: 1.0\r\n";
-$headers .= "Content-Type: text/html; charset=ISO-8859-1\r\n";
-mail($email,$mycompanyemailsubject,$customerform,$headers);
-
+} else {
+	$headers = "From:" . $mycompanyemail . "\r\n";
+	$headers .= "BCC: " . $mycompanyemail . "\r\n";
+	$headers .= "MIME-Version: 1.0\r\n";
+	$headers .= "Content-Type: text/html; charset=ISO-8859-1\r\n";
+	mail($email,$mycompanyemailsubject,$customerform,$headers);
+}
 }
 else {
 ?>
