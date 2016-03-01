@@ -81,7 +81,7 @@ if ($usePHPMailer) {
 	$mail = new PHPMailer;
 	// $mail->SMTPDebug = 1;		// Uncomment for debugging
 	$mail->isSMTP();			// Set mailer to use SMTP
-	$mail->SMTPAuth   = true		// enable SMTP authentication
+	$mail->SMTPAuth   = true;		// enable SMTP authentication
 	$mail->Port       = 587;		// set the SMTP port 25, 465, or 587
 	$mail->Host = 'smtp.myserver.com';	// Specify main and backup SMTP servers
 	$mail->SMTPAuth = true;			// Enable SMTP authentication
