@@ -285,7 +285,7 @@ $baseurl = (isset($_SERVER['HTTPS']) ? 'https://' : 'http://').$_SERVER['SERVER_
 				<p>Your Support Agreement has been submitted. <p>
 				<strong>As a subscriber to our support package, you receive:</strong>
 				<ul>
-				<li>Brief emails and calls, under 15 minutes per incident, are covered by your agreement.</li>
+				<li>Brief emails and calls handled in 10 minutes or less, are covered by your agreement.</li>
 					<li>The rate for labor will be discounted from &#36;150 to &#36;120 an hour</li>
 					<li>Hardware and software sales will enjoy a 5.5% discount</li>
 				</ul>
